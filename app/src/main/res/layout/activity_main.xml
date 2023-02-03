@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="218dp" />
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="498dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,5 +30,17 @@
         android:text="Button"
         tools:layout_editor_absoluteX="163dp"
         tools:layout_editor_absoluteY="112dp" />
+
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="194dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="161dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
