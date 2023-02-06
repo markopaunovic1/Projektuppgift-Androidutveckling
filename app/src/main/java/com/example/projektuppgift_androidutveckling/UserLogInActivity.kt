@@ -1,0 +1,11 @@
+package com.example.projektuppgift_androidutveckling
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class UserLogInActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_user_log_in)
+    }
+}
