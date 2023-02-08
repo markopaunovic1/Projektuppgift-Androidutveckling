@@ -1,34 +1,35 @@
 {
   "project_info": {
-    "project_number": "341478374128",
-    "project_id": "projektuppgift-android",
-    "storage_bucket": "projektuppgift-android.appspot.com"
+    "project_number": "1098494369166",
+    "project_id": "projektuppgift-matapp",
+    "storage_bucket": "projektuppgift-matapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:341478374128:android:693196cd96d38adf68e035", 
+        "mobilesdk_app_id": "1:1098494369166:android:e34c50b950b999761958df",
         "android_client_info": {
           "package_name": "com.example.projektuppgift_androidutveckling"
         }
       },
       "oauth_client": [
         {
-          "client_id": "341478374128-sa9go3n96r2tua27t3td7804rmdg9t8l.apps.googleusercontent.com",
+          "client_id": "1098494369166-48ajnoqds7cvcq2p5irb35ba1ltsbekc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCjMAVfrwopl8dLF3XghYc5h7M6r6eJxUM"
+
+          "current_key": "AIzaSyB8dKqDwgtnH0RmRAkqGTqCP2AiaVm0oYE"
+
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-
-              "client_id": "341478374128-sa9go3n96r2tua27t3td7804rmdg9t8l.apps.googleusercontent.com",
+              "client_id": "1098494369166-48ajnoqds7cvcq2p5irb35ba1ltsbekc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
