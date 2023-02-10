@@ -40,17 +40,12 @@ class UserActivity : AppCompatActivity() {
 
         saveAndLoginButton.setOnClickListener {
             createUserAccount()
-
-           // nextActivity()
         }
     }
-/*
     fun nextActivity() {
-        val intent = Intent(this, resyclerView::class.java)
+        val intent = Intent(this, PrivateListActivity::class.java)
         startActivity(intent)
     }
- */
-
 
     fun createUserAccount() {
 
@@ -64,7 +59,7 @@ class UserActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Log.d("!!!", "Created user succeeded")
-                ///Next activity()
+                nextActivity()
             } else {
                 Log.d("!!!", "user not created ${task.exception}")
             }

@@ -42,12 +42,12 @@ class UserLogInActivity : AppCompatActivity() {
         } else {
             auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                 Toast.makeText(this, "Hello User :D !", Toast.LENGTH_LONG).show()
-                intent = Intent(this, UserActivity::class.java)//change to correct activity.
+                intent = Intent(this, PrivateListActivity::class.java)
                 startActivity(intent)
+
             }.addOnFailureListener{
                 Toast.makeText(this, "Wrong Email or Password!", Toast.LENGTH_LONG).show()
             }
-
         }
     }
 }
