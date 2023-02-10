@@ -44,10 +44,10 @@ class UserLogInActivity : AppCompatActivity() {
                 Toast.makeText(this, "Hello User :D !", Toast.LENGTH_LONG).show()
                 intent = Intent(this, LandingPagePrivateActivity::class.java)//change to correct activity.
                 startActivity(intent)
+
             }.addOnFailureListener{
                 Toast.makeText(this, "Wrong Email or Password!", Toast.LENGTH_LONG).show()
             }
-
         }
     }
 }

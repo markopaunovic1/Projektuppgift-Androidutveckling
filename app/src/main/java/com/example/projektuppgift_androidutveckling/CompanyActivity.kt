@@ -1,5 +1,6 @@
 package com.example.projektuppgift_androidutveckling
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -33,7 +34,12 @@ class CompanyActivity : AppCompatActivity() {
         val signUpBtn = findViewById<Button>(R.id.saveAndLogInButton2)
         signUpBtn.setOnClickListener{
             signUp()
+            nextActivity()
         }
+    }
+    fun nextActivity() {
+        val intent = Intent(this, AddFood::class.java)
+        startActivity(intent)
     }
 
     //Sign Up function for restaurant owner.
