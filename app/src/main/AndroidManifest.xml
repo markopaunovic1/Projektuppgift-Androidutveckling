@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ProjektuppgiftAndroidutveckling"
         tools:targetApi="31">
         <activity
+            android:name=".PrivateListActivity"
+            android:exported="false" />
+        <activity
             android:name=".LandingPagePrivateActivity"
             android:exported="false" />
         <activity

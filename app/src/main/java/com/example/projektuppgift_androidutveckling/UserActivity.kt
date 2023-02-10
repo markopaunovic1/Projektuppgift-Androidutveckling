@@ -40,14 +40,16 @@ class UserActivity : AppCompatActivity() {
 
         saveAndLoginButton.setOnClickListener {
             createUserAccount()
-//            nextActivity()
+
+           // nextActivity()
         }
     }
-
-//    fun nextActivity() {
-//        val intent = Intent(this, resyclerView::class.java)
-//        startActivity(intent)
-//    }
+/*
+    fun nextActivity() {
+        val intent = Intent(this, resyclerView::class.java)
+        startActivity(intent)
+    }
+ */
 
 
     fun createUserAccount() {
