@@ -16,6 +16,9 @@
             android:name=".PrivateListActivity"
             android:exported="false" />
         <activity
+            android:name=".LandingPagePrivateActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddFood"
             android:exported="false" />
         <activity
