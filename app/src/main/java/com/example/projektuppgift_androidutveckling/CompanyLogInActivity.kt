@@ -32,17 +32,19 @@ class CompanyLogInActivity : AppCompatActivity() {
         }
 
         if (auth.currentUser != null) {
-            gotToAddActivity()
+          //  gotToAddActivity()
         }
 
 
 
     }
-
+/*
     fun gotToAddActivity() {
         val intent = Intent(this, RecyclerActivity::class.java)  // RecyclerActivity not created yet
         startActivity(intent)
     }
+
+ */
 
 
     fun compLogIn() {
@@ -58,7 +60,7 @@ class CompanyLogInActivity : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d("!!!", "signed in")
-                    gotToAddActivity()
+                    //gotToAddActivity()
                 } else {
                     Log.d("!!!", "user not signed in ${task.exception}")
                 }
