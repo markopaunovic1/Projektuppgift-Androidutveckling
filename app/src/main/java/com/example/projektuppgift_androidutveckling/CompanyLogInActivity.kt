@@ -34,16 +34,13 @@ class CompanyLogInActivity : AppCompatActivity() {
         if (auth.currentUser != null) {
           //  gotToAddActivity()
         }
-
-
-
     }
+
 /*
     fun gotToAddActivity() {
         val intent = Intent(this, RecyclerActivity::class.java)  // RecyclerActivity not created yet
         startActivity(intent)
     }
-
  */
 
 
@@ -63,8 +60,7 @@ class CompanyLogInActivity : AppCompatActivity() {
                     //gotToAddActivity()
                 } else {
                     Log.d("!!!", "user not signed in ${task.exception}")
-                }
-
-            }
+              }
+         }
     }
 }

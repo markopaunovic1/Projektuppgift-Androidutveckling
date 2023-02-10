@@ -16,7 +16,7 @@
             android:name=".PrivateListActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoryActivity"
+            android:name=".AddFood"
             android:exported="false" />
         <activity
             android:name=".CompanyLogInActivity"
