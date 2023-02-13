@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -13,6 +14,7 @@ import com.google.firebase.ktx.Firebase
 class AddFood : AppCompatActivity() {
 
     lateinit var db : FirebaseFirestore
+    lateinit var auth : FirebaseAuth
     lateinit var addFoodImageView : ImageView
     lateinit var addFoodImageButton : Button
     lateinit var addFoodUploadImageButton : Button
@@ -27,6 +29,7 @@ class AddFood : AppCompatActivity() {
 
 
         db = Firebase.firestore
+        auth = Firebase.auth
 
         addFoodImageView = findViewById(R.id.addFoodImageView)
         addFoodImageButton = findViewById(R.id.addFoodImageButton)
@@ -49,6 +52,7 @@ class AddFood : AppCompatActivity() {
 
         addFoodSaveButton.setOnClickListener {
             saveFood()
+            finish()
         }
 
 
@@ -70,7 +74,14 @@ class AddFood : AppCompatActivity() {
 
 
     fun saveFood() {
-
+        val foodName = addFoodNameEditText.text.toString()
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            val newDish = Dish(dishName = foodName)
+            RestaurantDataManager.dishList.add(newDish)
+            db.collection("Owners").document(currentUser.uid).collection("Dishes")
+                .add(newDish)
+        }
     }
 
 }
