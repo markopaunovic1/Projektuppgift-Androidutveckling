@@ -7,5 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="lightblue">#6096ba</color>
+
+    <!-- blue theme -->
+    <color name="navy">#16425B</color>
+    <color name="darkblue">#2F6690</color>
+    <color name="blue">#3A7CA5</color>
+    <color name="bluewhite">#D6D9DC</color>
+    <color name="lightblue">#81C3D7</color>
 </resources>
