@@ -31,9 +31,9 @@ class CompanyLogInActivity : AppCompatActivity() {
             compLogIn()
         }
 
-        if (auth.currentUser != null) {
-          //  gotToAddActivity()
-        }
+        /*if (auth.currentUser != null) {
+            gotToAddActivity()
+        }*/
     }
     fun gotToAddActivity() {
         val intent = Intent(this, CompanyListActivity::class.java)
