@@ -8,7 +8,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerAdapterRestaurante(val context : Context, val restaurants : MutableList<Restaurante>)
+class RecyclerAdapterRestaurante(val context : Context, val restaurants : MutableList<Restaurant>)
     : RecyclerView.Adapter<RecyclerAdapterRestaurante.viewHolder>(){
     val layoutInflater = LayoutInflater.from(context)
 
@@ -29,6 +29,14 @@ class RecyclerAdapterRestaurante(val context : Context, val restaurants : Mutabl
 
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         val restaurante = restaurants[position]
-        holder.nameTextView.text = restaurante.name
+        holder.nameTextView.text = restaurante.restaurantName
+    }
+
+    fun setList(list: MutableList<Restaurant>) {
+        restaurants.clear()
+        for (restaurant in list){
+            restaurants.add(restaurant)
+        }
+        this.notifyDataSetChanged()
     }
 }
