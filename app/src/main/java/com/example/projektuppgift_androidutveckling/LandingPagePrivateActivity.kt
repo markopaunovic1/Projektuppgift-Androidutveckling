@@ -1,5 +1,6 @@
 package com.example.projektuppgift_androidutveckling
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -12,7 +13,12 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
 
         val landingPageLogout = findViewById<Button>(R.id.LandingPageLogOutbutton)
+
         val landingPageRestaurantButton = findViewById<ImageButton>(R.id.LandingPageRestaurantButton)
+        landingPageRestaurantButton.setOnClickListener {
+            val intent = Intent(this,PrivateListActivity::class.java)
+            startActivity(intent)
+        }
         val landingPageCategoryButton = findViewById<ImageButton>(R.id.LandingPageCategoryButton)
         val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
         val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
