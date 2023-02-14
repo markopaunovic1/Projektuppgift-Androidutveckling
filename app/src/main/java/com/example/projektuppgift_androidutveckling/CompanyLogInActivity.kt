@@ -36,7 +36,7 @@ class CompanyLogInActivity : AppCompatActivity() {
         }
     }
     fun gotToAddActivity() {
-        val intent = Intent(this, AddFood::class.java)  // RecyclerActivity not created yet
+        val intent = Intent(this, CompanyListActivity::class.java)
         startActivity(intent)
     }
 

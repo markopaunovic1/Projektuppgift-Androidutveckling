@@ -9,11 +9,15 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.DocumentId
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class CompanyActivity : AppCompatActivity() {
 
     lateinit var auth : FirebaseAuth
+    lateinit var db : FirebaseFirestore
     lateinit var companyNameET : EditText
     lateinit var companyAddressET : EditText
     lateinit var emailET : EditText
@@ -24,6 +28,7 @@ class CompanyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_company)
 
         auth = Firebase.auth
+        db = Firebase.firestore
 
         companyNameET = findViewById(R.id.createCompNameET)
         companyAddressET = findViewById(R.id.createCompAdET)
@@ -34,11 +39,10 @@ class CompanyActivity : AppCompatActivity() {
         val signUpBtn = findViewById<Button>(R.id.saveAndLogInButton2)
         signUpBtn.setOnClickListener{
             signUp()
-            nextActivity()
         }
     }
     fun nextActivity() {
-        val intent = Intent(this, AddFood::class.java)
+        val intent = Intent(this, CompanyListActivity::class.java)
         startActivity(intent)
     }
 
@@ -58,9 +62,29 @@ class CompanyActivity : AppCompatActivity() {
             .addOnCompleteListener{ task ->
                 if (task.isSuccessful){
                     Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show()
+                    uploadRestaurantInfo()
+                    nextActivity()
                 }else{
                     Toast.makeText(this, "Unable to create account!", Toast.LENGTH_SHORT).show()
                 }
             }
     }
+    //Function to upload the restaurant information to FireStore so we can retrieve them later when needed.
+    fun uploadRestaurantInfo(){
+        val restaurantName = companyNameET.text.toString()
+        val restaurantAddress = companyAddressET.text.toString()
+        val restaurantEmail = emailET.text.toString()
+        val restaurantNumber = mobileNumberET.text.toString()
+        val currentUser = auth.currentUser
+        val newRestaurant = Restaurant(restaurantName = restaurantName, restaurantAddress = restaurantAddress,
+            restaurantEmail = restaurantEmail, restaurantNumber =  restaurantNumber)
+        if(currentUser != null){
+            db.collection("Restaurants").document(currentUser.uid)
+                .collection("Restaurant Info").add(newRestaurant)
+        }
+    }
 }
+
+data class Restaurant (@DocumentId var documentId: String? = null, val restaurantName : String? = null,
+                       val restaurantAddress : String? = null, val restaurantEmail : String? = null,
+                       val restaurantNumber : String? = null)
