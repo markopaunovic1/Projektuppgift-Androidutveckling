@@ -75,9 +75,11 @@ class AddFood : AppCompatActivity() {
 
     fun saveFood() {
         val foodName = addFoodNameEditText.text.toString()
+        val foodPrice = addFoodPriceEditText.text.toString()
+        val foodIngredients = addFoodIngredientsEditText.text.toString()
         val currentUser = auth.currentUser
         if(currentUser != null){
-            val newDish = Dish(dishName = foodName)
+            val newDish = Dish(dishName = foodName, dishPrice = foodPrice, dishIngredients = foodIngredients)
             RestaurantDataManager.dishList.add(newDish)
             db.collection("Owners").document(currentUser.uid).collection("Dishes")
                 .add(newDish)
