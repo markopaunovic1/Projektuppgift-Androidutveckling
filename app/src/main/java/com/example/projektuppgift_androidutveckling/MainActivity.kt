@@ -4,17 +4,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import com.google.firebase.firestore.auth.User
 
 class MainActivity : AppCompatActivity() {
 
     //Create Accounts
-    private lateinit var CreatePrivateButton: Button
-    private lateinit var CreateCompanyButton: Button
+    private lateinit var CreatePrivateButton: ImageButton
+    private lateinit var CreateCompanyButton: ImageButton
 
     //Login Accounts
-    private lateinit var LoginPrivateButton: Button
-    private lateinit var LoginCompanyButton: Button
+    private lateinit var LoginPrivateButton: ImageButton
+    private lateinit var LoginCompanyButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
