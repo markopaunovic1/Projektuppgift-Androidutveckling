@@ -1,9 +1,7 @@
 package com.example.projektuppgift_androidutveckling
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
-import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -20,6 +18,8 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val dish = dishes[position]
         holder.dishName.text = dish.dishName
+        holder.dishPrice.text = dish.dishPrice
+        holder.dishIngredients.text = dish.dishIngredients
         holder.listItemPosition = position
     }
 
@@ -29,6 +29,8 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
 
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         val dishName = itemView.findViewById<TextView>(R.id.dishNameTV)
+        val dishPrice = itemView.findViewById<TextView>(R.id.priceTV)
+        val dishIngredients = itemView.findViewById<TextView>(R.id.dishIngredientsTV)
         var listItemPosition = 0
     }
 
