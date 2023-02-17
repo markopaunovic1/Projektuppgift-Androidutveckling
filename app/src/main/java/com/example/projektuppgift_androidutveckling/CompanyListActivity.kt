@@ -30,6 +30,7 @@ class CompanyListActivity : AppCompatActivity() {
             val docRef = db.collection("Owners").document(currentUser.uid)
                 .collection("Dishes")
             docRef.get().addOnSuccessListener {documentSnapShot->
+                RestaurantDataManager.dishList.clear()
                 for(document in documentSnapShot.documents){
                     val dish = document.toObject<Dish>()
                     if(dish != null){
@@ -54,7 +55,8 @@ class CompanyListActivity : AppCompatActivity() {
     }
 }
 
-data class Dish(@DocumentId var documentId: String? = null, val dishName : String? = null)
+data class Dish(@DocumentId var documentId: String? = null, val dishName : String? = null, val dishPrice : String? = null,
+                val dishIngredients : String? = null)
 
 object RestaurantDataManager{
     val dishList = mutableListOf<Dish>()
