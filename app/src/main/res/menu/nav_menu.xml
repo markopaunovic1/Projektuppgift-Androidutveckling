@@ -28,7 +28,7 @@
             android:title="Dela"/>
         <item
             android:id="@+id/nav_info"
-            android:icon="@drawable/baseline_person_24"
+            android:icon="@drawable/baseline_info_24"
             android:title="Om oss"/>
     </group>
 
