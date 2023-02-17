@@ -5,10 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
-
-import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -21,7 +18,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
 
 
-    lateinit var auth : FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +27,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
         //val landingPageLogout = findViewById<Button>(R.id.LandingPageLogOutbutton)
 
-        auth = Firebase.auth
-        val landingPageLogout = findViewById<Button>(R.id.LandingPageLogOutbutton)
-        landingPageLogout.setOnClickListener{
-            auth.signOut()
-            finish()
-        }
+
 
         val landingPageRestaurantButton = findViewById<ImageButton>(R.id.LandingPageRestaurantButton)
         landingPageRestaurantButton.setOnClickListener {
