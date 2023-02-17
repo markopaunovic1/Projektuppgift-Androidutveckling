@@ -9,58 +9,62 @@
 
     <Button
         android:id="@+id/LandingPageLogOutbutton"
-        android:layout_width="145dp"
-        android:layout_height="41dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="Log Out"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectanglesmall"/>
 
     <ImageButton
         android:id="@+id/LandingPageRestaurantButton"
         android:layout_width="250dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="108dp"
-        android:backgroundTint="#6200ED"
+        android:layout_height="80dp"
+        android:layout_marginBottom="152dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:backgroundTint="#FBF9FD"
         app:layout_constraintBottom_toTopOf="@+id/LandingPageMapsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/baseline_fastfood_24" />
+        app:srcCompat="@drawable/rectanglesmall" />
 
     <ImageButton
         android:id="@+id/LandingPageCategoryButton"
         android:layout_width="115dp"
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#6200EC"
+        android:background="@color/cardview_shadow_end_color"
+        android:backgroundTint="#FEFCFF"
         app:layout_constraintBottom_toTopOf="@+id/LandingPageMapsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.726"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LandingPageRestaurantButton"
-        app:layout_constraintVertical_bias="0.25"
-        app:srcCompat="@drawable/baseline_category_24" />
+        app:layout_constraintVertical_bias="0.406"
+        app:srcCompat="@drawable/rectanglesmall" />
 
     <ImageButton
         android:id="@+id/LandingPageMapsButton"
         android:layout_width="250dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="248dp"
-        android:backgroundTint="#6200EC"
+        android:layout_marginBottom="244dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:backgroundTint="#DFE9EF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/baseline_map_24" />
+        app:srcCompat="@drawable/rectanglesmall" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="70dp"
         android:layout_height="46dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -70,13 +74,56 @@
         android:layout_width="115dp"
         android:layout_height="80dp"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#6200EC"
-        android:src="@drawable/baseline_saved_search_24"
+        android:background="@color/cardview_shadow_end_color"
+        android:backgroundTint="#E7EEF1"
         app:layout_constraintBottom_toTopOf="@+id/LandingPageMapsButton"
         app:layout_constraintEnd_toStartOf="@+id/LandingPageCategoryButton"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LandingPageRestaurantButton"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.406"
+        app:srcCompat="@drawable/rectanglesmall" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/LandingPageRestaurantButton"
+        app:layout_constraintEnd_toEndOf="@+id/LandingPageRestaurantButton"
+        app:layout_constraintStart_toStartOf="@+id/LandingPageRestaurantButton"
+        app:layout_constraintTop_toTopOf="@+id/LandingPageRestaurantButton"
+        app:layout_constraintVertical_bias="0.446"
+        app:srcCompat="@drawable/baseline_fastfood_24" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="43dp"
+        android:layout_height="26dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LandPageCampaignButton"
+        app:layout_constraintEnd_toEndOf="@+id/LandPageCampaignButton"
+        app:layout_constraintStart_toStartOf="@+id/LandPageCampaignButton"
+        app:layout_constraintTop_toTopOf="@+id/LandPageCampaignButton"
+        app:srcCompat="@drawable/baseline_saved_search_24" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/LandingPageCategoryButton"
+        app:layout_constraintEnd_toEndOf="@+id/LandingPageCategoryButton"
+        app:layout_constraintStart_toStartOf="@+id/LandingPageCategoryButton"
+        app:layout_constraintTop_toTopOf="@+id/LandingPageCategoryButton"
+        app:srcCompat="@drawable/baseline_category_24" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/LandingPageMapsButton"
+        app:layout_constraintEnd_toEndOf="@+id/LandingPageMapsButton"
+        app:layout_constraintStart_toStartOf="@+id/LandingPageMapsButton"
+        app:layout_constraintTop_toTopOf="@+id/LandingPageMapsButton"
+        app:srcCompat="@drawable/baseline_map_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
