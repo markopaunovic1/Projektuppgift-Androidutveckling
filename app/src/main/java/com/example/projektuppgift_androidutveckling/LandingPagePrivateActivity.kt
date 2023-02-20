@@ -49,7 +49,8 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
             when (menuItem.itemId) {
                 R.id.nav_profile -> {
-
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.nav_orders -> {
