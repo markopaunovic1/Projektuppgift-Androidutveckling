@@ -79,8 +79,9 @@ class CompanyActivity : AppCompatActivity() {
         val newRestaurant = Restaurant(restaurantName = restaurantName, restaurantAddress = restaurantAddress,
             restaurantEmail = restaurantEmail, restaurantNumber =  restaurantNumber)
         if(currentUser != null){
-            db.collection("Restaurants").document(currentUser.uid)
-                .collection("Restaurant Info").add(newRestaurant)
+            //I have used set instead of add in order to user the same Restaurants collection without
+            // having to create another collection
+            db.collection("Restaurants").document(currentUser.uid).set(newRestaurant)
         }
     }
 }

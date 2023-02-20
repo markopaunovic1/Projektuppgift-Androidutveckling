@@ -24,11 +24,20 @@ class PrivateListActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.RestauranteRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this@PrivateListActivity)
 
-        /*Here we need to retrieve the restaurants names from firebase and put them in restaurantList
-        list in order to show the list of restaurants in the recycler view*/
+        // Retrieve Restaurant names from data base and set them in the recycler view.
         val docRef = db.collection("Restaurants")
-        recyclerView.adapter = RecyclerAdapterRestaurante(this@PrivateListActivity,
-            RestaurantInfoDataManager.restaurantList)
+        docRef.get().addOnSuccessListener {documentSnapShot ->
+            RestaurantInfoDataManager.restaurantList.clear()
+            for (document in documentSnapShot){
+                val restaurant = document.toObject<Restaurant>()
+                if(restaurant != null){
+                    RestaurantInfoDataManager.restaurantList.add(restaurant)
+                }
+            }
+            recyclerView.adapter = RecyclerAdapterRestaurante(this@PrivateListActivity,
+                RestaurantInfoDataManager.restaurantList)
+        }
+
     }
 
     override fun onResume() {
