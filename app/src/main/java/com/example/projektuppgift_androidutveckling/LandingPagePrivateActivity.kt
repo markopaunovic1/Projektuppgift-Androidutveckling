@@ -2,23 +2,20 @@ package com.example.projektuppgift_androidutveckling
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
-import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
+
 class LandingPagePrivateActivity : AppCompatActivity() {
 
 
-    private lateinit var drawerLayout: DrawerLayout
-
     private lateinit var auth : FirebaseAuth
-
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,28 +24,67 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
         //val landingPageLogout = findViewById<Button>(R.id.LandingPageLogOutbutton)
 
-
-
         val landingPageRestaurantButton = findViewById<ImageButton>(R.id.LandingPageRestaurantButton)
         landingPageRestaurantButton.setOnClickListener {
             val intent = Intent(this,PrivateListActivity::class.java)
             startActivity(intent)
         }
-        val landingPageCategoryButton = findViewById<ImageButton>(R.id.LandingPageCategoryButton)
+
         val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
         val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
 
 
         auth = Firebase.auth
 
+        navOptions()
+
+
     }
 
-    private fun navDrawerOptions(){
+    private fun navOptions(){
 
-        drawerLayout = findViewById(R.id.drawer_layout)
+        val navigation = findViewById<NavigationView>(R.id.nav_view)
 
+        navigation.setNavigationItemSelectedListener { menuItem ->
 
+            when (menuItem.itemId) {
+                R.id.nav_profile -> {
+
+                    true
+                }
+                R.id.nav_orders -> {
+
+                    true
+                }
+                R.id.nav_service -> {
+
+                    true
+                }
+                R.id.nav_settings -> {
+
+                    true
+                }
+                R.id.nav_share -> {
+
+                    true
+                }
+                R.id.nav_info -> {
+
+                    true
+                }
+                R.id.nav_logout -> {
+                    Log.d("auth.signout", "logout")
+                    auth.signOut()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> false
+            }
+        }
 
     }
 
 }
+
