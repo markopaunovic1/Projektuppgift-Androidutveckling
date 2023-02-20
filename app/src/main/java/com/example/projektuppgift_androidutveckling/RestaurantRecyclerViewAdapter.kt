@@ -4,8 +4,15 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Dish>)
                 : RecyclerView.Adapter<RestaurantRecyclerViewAdapter.ViewHolder>() {
@@ -32,6 +39,27 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
         val dishPrice = itemView.findViewById<TextView>(R.id.priceTV)
         val dishIngredients = itemView.findViewById<TextView>(R.id.dishIngredientsTV)
         var listItemPosition = 0
+        var delete = itemView.findViewById<ImageButton>(R.id.deleteIB)
+
+        init {
+            delete.setOnClickListener{
+                deleteDishFromListAndDataBase()
+            }
+        }
+        fun deleteDishFromListAndDataBase (){
+            val selectedDishId = RestaurantDataManager.dishList[listItemPosition].documentId
+            if(selectedDishId != null){
+                val db : FirebaseFirestore = Firebase.firestore
+                val auth : FirebaseAuth = Firebase.auth
+                val currentUser = auth.currentUser
+                db.collection("Owners").document(currentUser!!.uid).collection("Dishes")
+                    .document(selectedDishId).delete()
+                    .addOnSuccessListener { Toast.makeText(context, "Delete Successful!", Toast.LENGTH_SHORT).show()
+                        RestaurantDataManager.dishList.removeAt(listItemPosition)
+                        notifyItemRemoved(listItemPosition)}
+                    .addOnFailureListener { Toast.makeText(context, "Delete Unsuccessful", Toast.LENGTH_SHORT).show()}
+            }
+        }
     }
 
 }
