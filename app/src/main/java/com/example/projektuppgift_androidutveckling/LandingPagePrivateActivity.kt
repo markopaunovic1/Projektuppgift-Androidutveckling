@@ -59,6 +59,9 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                 }
                 R.id.nav_service -> {
 
+                    val intent = Intent(this, SupportWindow::class.java)
+                    startActivity(intent)
+
                     true
                 }
                 R.id.nav_settings -> {
