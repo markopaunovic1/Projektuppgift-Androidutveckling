@@ -33,6 +33,9 @@
             android:exported="false"
             android:label="@string/title_activity_map_food" />
         <activity
+            android:name=".DishesMenuRecyclerView"
+            android:exported="false" />
+        <activity
             android:name=".SupportWindow"
             android:exported="false" />
         <activity
