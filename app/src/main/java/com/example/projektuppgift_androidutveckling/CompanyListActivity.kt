@@ -1,6 +1,7 @@
 package com.example.projektuppgift_androidutveckling
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,6 +27,7 @@ class CompanyListActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.restaurantRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this@CompanyListActivity)
         val currentUser = auth.currentUser
+        //to download the information from database to our list
         if(currentUser != null){
             val docRef = db.collection("Owners").document(currentUser.uid)
                 .collection("Dishes")
@@ -56,7 +58,7 @@ class CompanyListActivity : AppCompatActivity() {
 }
 
 data class Dish(@DocumentId var documentId: String? = null, val dishName : String? = null, val dishPrice : String? = null,
-                val dishIngredients : String? = null)
+                val dishIngredients : String? = null, val dishImage : String? = null)
 
 object RestaurantDataManager{
     val dishList = mutableListOf<Dish>()
