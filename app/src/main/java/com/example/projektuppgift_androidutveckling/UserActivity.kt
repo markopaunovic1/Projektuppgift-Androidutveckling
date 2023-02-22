@@ -8,9 +8,13 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 class UserActivity : AppCompatActivity() {
+
+    lateinit var db : FirebaseFirestore
 
     lateinit var auth: FirebaseAuth
 
@@ -23,11 +27,13 @@ class UserActivity : AppCompatActivity() {
 
     lateinit var saveAndLoginButton: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
 
         auth = Firebase.auth
+        db = Firebase.firestore
 
         name = findViewById(R.id.createPrivNameET)
         email = findViewById(R.id.createPrivEmailET)
@@ -39,15 +45,19 @@ class UserActivity : AppCompatActivity() {
         saveAndLoginButton = findViewById(R.id.saveAndLogInButton)
 
         saveAndLoginButton.setOnClickListener {
-            createUserAccount()
+            createUserAccountWithInformation()
         }
     }
-    fun nextActivity() {
-        val intent = Intent(this, PrivateListActivity::class.java)
-        startActivity(intent)
-    }
 
-    fun createUserAccount() {
+    fun createUserAccountWithInformation() {
+
+        val user = User(
+            name = name.text.toString(),
+            email = email.text.toString(),
+            password = password.text.toString(),
+            adress = adress.text.toString(),
+            phoneNr = phoneNumber.text.toString()
+        )
 
         val email = email.text.toString()
         val password = password.text.toString()
@@ -56,13 +66,29 @@ class UserActivity : AppCompatActivity() {
             return
         }
 
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                Log.d("!!!", "Created user succeeded")
-                nextActivity()
-            } else {
-                Log.d("!!!", "user not created ${task.exception}")
+        db.collection("users")
+            .add(user)
+            .addOnSuccessListener { documentReference ->
+                Log.d("!!!", "DocumentSnapshot added with ID: ${documentReference.id}")
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Log.d("!!!", "Created user succeeded")
+                            nextActivity()
+                        } else {
+                            Log.d("!!!", "user not created ${task.exception}")
+                        }
+                    }
             }
-        }
+            .addOnFailureListener { e ->
+                Log.w("!!!", "Error adding document", e)
+            }
+    }
+    fun nextActivity() {
+        val intent = Intent(this, LandingPagePrivateActivity::class.java)
+        startActivity(intent)
     }
 }
+
+
+
