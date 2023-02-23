@@ -37,8 +37,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
         }
         val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
         landPageCampaignButton.setOnClickListener {
-            val intent = Intent(this,GpsActivity::class.java)
-            startActivity(intent)
+
         }
 
 
