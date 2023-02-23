@@ -9,6 +9,7 @@ import com.google.firebase.firestore.auth.User
 
 class MainActivity : AppCompatActivity() {
 
+
     //Create Accounts
     private lateinit var CreatePrivateButton: ImageButton
     private lateinit var CreateCompanyButton: ImageButton
