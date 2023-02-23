@@ -36,7 +36,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="AIzaSyBZC2DBLl-NBiMqME9UQhgMdctr_S_-JQ4" />
 
         <activity
             android:name=".MapFood"
