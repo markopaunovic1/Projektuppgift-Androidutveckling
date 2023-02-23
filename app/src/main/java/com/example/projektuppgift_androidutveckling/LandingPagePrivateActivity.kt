@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -21,17 +23,22 @@ class LandingPagePrivateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
 
+        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
+        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
 
-        //val landingPageLogout = findViewById<Button>(R.id.LandingPageLogOutbutton)
+
+        val menuButton = findViewById<ImageButton>(R.id.menuButton)
+        menuButton.setOnClickListener {
+            val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
+
 
         val landingPageRestaurantButton = findViewById<ImageButton>(R.id.LandingPageRestaurantButton)
         landingPageRestaurantButton.setOnClickListener {
             val intent = Intent(this,PrivateListActivity::class.java)
             startActivity(intent)
         }
-
-        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
-        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
 
 
         auth = Firebase.auth
