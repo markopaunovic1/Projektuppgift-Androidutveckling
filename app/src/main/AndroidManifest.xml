@@ -38,9 +38,6 @@
             android:name=".DishesMenuRecyclerView"
             android:exported="false" />
         <activity
-            android:name=".DishesMenuRecyclerView"
-            android:exported="false" />
-        <activity
             android:name=".SupportWindow"
             android:exported="false" />
         <activity
