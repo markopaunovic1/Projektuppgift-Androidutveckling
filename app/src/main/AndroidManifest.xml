@@ -16,10 +16,10 @@
         android:theme="@style/Theme.ProjektuppgiftAndroidutveckling"
         tools:targetApi="31">
         <activity
-            android:name=".GpsActivity"
+            android:name=".User.GpsActivity"
             android:exported="false" />
         <activity
-            android:name=".MapInfoWindowActivity"
+            android:name=".User.MapInfoWindowActivity"
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -37,38 +37,38 @@
             android:value="AIzaSyBZC2DBLl-NBiMqME9UQhgMdctr_S_-JQ4" />
 
         <activity
-            android:name=".MapFood"
+            android:name=".User.MapFood"
             android:exported="false"
             android:label="@string/title_activity_map_food" />
         <activity
-            android:name=".DishesMenuRecyclerView"
+            android:name=".User.DishesMenuRecyclerView"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".User.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".SupportWindow"
+            android:name=".User.SupportWindow"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".User.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".PrivateListActivity"
+            android:name=".User.PrivateListActivity"
             android:exported="false" />
         <activity
             android:name=".CompanyListActivity"
             android:exported="false" />
         <activity
-            android:name=".LandingPagePrivateActivity"
+            android:name=".User.LandingPagePrivateActivity"
             android:exported="false" />
         <activity
-            android:name=".AddFood"
+            android:name=".Company.AddFood"
             android:exported="false" />
         <activity
-            android:name=".CompanyLogInActivity"
+            android:name=".Company.CompanyLogInActivity"
             android:exported="false" />
         <activity
-            android:name=".UserLogInActivity"
+            android:name=".User.UserLogInActivity"
             android:exported="false" />
         <activity
             android:name=".CompanyActivity"
@@ -78,7 +78,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".UserActivity"
+            android:name=".User.UserActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

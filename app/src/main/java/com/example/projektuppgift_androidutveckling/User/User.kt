@@ -1,4 +1,4 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import com.google.firebase.firestore.DocumentId
 

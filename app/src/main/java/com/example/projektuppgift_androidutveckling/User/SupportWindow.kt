@@ -1,9 +1,10 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageButton
+import com.example.projektuppgift_androidutveckling.R
 
 class SupportWindow : AppCompatActivity() {
 
