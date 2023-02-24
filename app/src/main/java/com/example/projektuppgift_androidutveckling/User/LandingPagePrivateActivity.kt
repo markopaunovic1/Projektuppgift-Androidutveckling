@@ -1,4 +1,4 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 
 import android.content.Intent
@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.projektuppgift_androidutveckling.*
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -23,8 +24,8 @@ class LandingPagePrivateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
 
-        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
-        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
+        //val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
+        //val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
 
 
         val menuButton = findViewById<ImageButton>(R.id.menuButton)
@@ -36,13 +37,13 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
         val landingPageRestaurantButton = findViewById<ImageButton>(R.id.LandingPageRestaurantButton)
         landingPageRestaurantButton.setOnClickListener {
-            val intent = Intent(this,PrivateListActivity::class.java)
+            val intent = Intent(this, PrivateListActivity::class.java)
             startActivity(intent)
         }
 
         val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
         landingPageMapButton.setOnClickListener {
-            val intent = Intent(this,MapFood::class.java)
+            val intent = Intent(this, MapFood::class.java)
             startActivity(intent)
         }
         val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
@@ -83,7 +84,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                 }
                 R.id.nav_settings -> {
 
-                    val intent = Intent(this,SettingsActivity::class.java)
+                    val intent = Intent(this, SettingsActivity::class.java)
                     startActivity(intent)
 
                     true
