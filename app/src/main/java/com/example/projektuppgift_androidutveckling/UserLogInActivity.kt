@@ -27,10 +27,23 @@ class UserLogInActivity : AppCompatActivity() {
         email = findViewById(R.id.privMailLogET)
         password = findViewById(R.id.privPswLogET)
 
+
+
         val privPswLogET = findViewById<Button>(R.id.privLogInButton)
         privPswLogET.setOnClickListener {
             privateSignIn()
         }
+
+        if (auth.currentUser != null) {
+            gotToAddActivity()
+        }
+
+
+    }
+
+    fun gotToAddActivity() {
+        val intent = Intent(this, LandingPagePrivateActivity::class.java)
+        startActivity(intent)
     }
 
     fun privateSignIn() {

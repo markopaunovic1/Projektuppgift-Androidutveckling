@@ -47,6 +47,8 @@ class PrivateListActivity : AppCompatActivity() {
 
 
     object RestaurantInfoDataManager {
+
+
         val restaurantList = mutableListOf<Restaurant>()
 
         init {
