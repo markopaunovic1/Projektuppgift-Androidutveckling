@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 
 class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Dish>)
                 : RecyclerView.Adapter<RestaurantRecyclerViewAdapter.ViewHolder>() {
@@ -27,6 +31,9 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
         holder.dishName.text = dish.dishName
         holder.dishPrice.text = dish.dishPrice
         holder.dishIngredients.text = dish.dishIngredients
+
+        Picasso.get().load(dish.dishImage).into(holder.image)
+
         holder.listItemPosition = position
     }
 
@@ -38,6 +45,7 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
         val dishName = itemView.findViewById<TextView>(R.id.dishNameTV)
         val dishPrice = itemView.findViewById<TextView>(R.id.priceTV)
         val dishIngredients = itemView.findViewById<TextView>(R.id.dishIngredientsTV)
+        var image = itemView.findViewById<ImageView>(R.id.companyRestaurantImage)
         var listItemPosition = 0
         var delete = itemView.findViewById<ImageButton>(R.id.deleteIB)
 
@@ -46,6 +54,7 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
                 deleteDishFromListAndDataBase()
             }
         }
+        // To remove the dish from Android studio and database.
         fun deleteDishFromListAndDataBase (){
             val selectedDishId = RestaurantDataManager.dishList[listItemPosition].documentId
             if(selectedDishId != null){
