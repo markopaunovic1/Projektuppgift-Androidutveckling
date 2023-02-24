@@ -65,7 +65,7 @@ class UserActivity : AppCompatActivity() {
         if (email.isEmpty() || password.isEmpty()) {
             return
         }
-
+// 1.
         db.collection("users")
             .add(user)
             .addOnSuccessListener { documentReference ->
@@ -83,6 +83,7 @@ class UserActivity : AppCompatActivity() {
             .addOnFailureListener { e ->
                 Log.w("!!!", "Error adding document", e)
             }
+        // 2.
     }
     fun nextActivity() {
         val intent = Intent(this, LandingPagePrivateActivity::class.java)

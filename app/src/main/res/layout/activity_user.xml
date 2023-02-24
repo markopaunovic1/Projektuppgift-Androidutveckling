@@ -4,30 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainlayout"
+    android:background="@drawable/basicbackground"
     tools:context=".UserActivity">
 
     <EditText
         android:id="@+id/createPrivNameET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Namn"
+        android:paddingStart="5dp"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/createPrivEmailET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/createPrivEmailET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="19dp"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:paddingStart="5dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
@@ -35,15 +37,15 @@
         app:layout_constraintBottom_toTopOf="@+id/createPrivPswET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/createPrivPswET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="31dp"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:paddingStart="5dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Lösenord"
         android:inputType="textPassword"
@@ -51,15 +53,15 @@
         app:layout_constraintBottom_toTopOf="@+id/createPrivAdET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/createPrivAdET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:paddingStart="5dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Adress"
         android:inputType="textPersonName"
@@ -67,25 +69,23 @@
         app:layout_constraintBottom_toTopOf="@+id/createPrivPhoET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/createPrivPhoET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="84dp"
+        android:paddingStart="5dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Mobilnummer"
         android:inputType="phone"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/saveAndLogInButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
@@ -94,21 +94,26 @@
         android:layout_marginTop="140dp"
         android:layout_marginBottom="20dp"
         android:text="Skapa konto"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/createPrivNameET"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/saveAndLogInButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/white"
         android:text="Spara och logga in"
+        android:textColor="@color/black"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.855" />

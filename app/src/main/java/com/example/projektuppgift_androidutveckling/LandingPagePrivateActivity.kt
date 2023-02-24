@@ -23,9 +23,6 @@ class LandingPagePrivateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
 
-        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
-        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
-
 
         val menuButton = findViewById<ImageButton>(R.id.menuButton)
         menuButton.setOnClickListener {
@@ -33,13 +30,11 @@ class LandingPagePrivateActivity : AppCompatActivity() {
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
-
         val landingPageRestaurantButton = findViewById<ImageButton>(R.id.LandingPageRestaurantButton)
         landingPageRestaurantButton.setOnClickListener {
             val intent = Intent(this,PrivateListActivity::class.java)
             startActivity(intent)
         }
-
 
         auth = Firebase.auth
 
