@@ -1,4 +1,4 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,7 @@ import android.os.Looper
 import android.util.Log
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
+import com.example.projektuppgift_androidutveckling.R
 import com.google.android.gms.location.*
 
 class GpsActivity : AppCompatActivity() {

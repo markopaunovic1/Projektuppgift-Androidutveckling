@@ -1,11 +1,12 @@
 package com.example.projektuppgift_androidutveckling
 
+import com.example.projektuppgift_androidutveckling.Company.CompanyLogInActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
-import com.google.firebase.firestore.auth.User
+import com.example.projektuppgift_androidutveckling.User.UserActivity
+import com.example.projektuppgift_androidutveckling.User.UserLogInActivity
 
 class MainActivity : AppCompatActivity() {
 
