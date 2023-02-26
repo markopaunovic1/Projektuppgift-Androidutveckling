@@ -1,10 +1,12 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projektuppgift_androidutveckling.LandingPagePrivateActivity
+import com.example.projektuppgift_androidutveckling.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore

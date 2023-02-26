@@ -1,12 +1,14 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projektuppgift_androidutveckling.R
+import com.example.projektuppgift_androidutveckling.Restaurant
 
 class RecyclerAdapterRestaurante(val context : Context, val restaurants : List<Restaurant>)
     : RecyclerView.Adapter<RecyclerAdapterRestaurante.viewHolder>(){
@@ -33,5 +35,13 @@ class RecyclerAdapterRestaurante(val context : Context, val restaurants : List<R
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView = itemView.findViewById<TextView>(R.id.nameOfRestaurantTextView)
         var listItemPosition = 0
+
+        init {
+            itemView.setOnClickListener{
+                val intent = Intent (context, DishesMenuRecyclerView::class.java)
+                intent.putExtra("Key", listItemPosition)
+                context.startActivity(intent)
+            }
+        }
     }
 }

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/infowindow"
-    tools:context=".MapInfoWindowActivity">
+    android:background="@drawable/bluetextbubbleedit"
+    tools:context=".User.MapInfoWindowActivity">
 
     <TextView
         android:id="@+id/restaurantTextView"

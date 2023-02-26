@@ -1,9 +1,10 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import android.location.Address
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.projektuppgift_androidutveckling.R
 
 
 import com.google.android.gms.maps.GoogleMap
@@ -16,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class MapFoodActivity : AppCompatActivity(), OnMapReadyCallback {

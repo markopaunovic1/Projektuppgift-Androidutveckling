@@ -1,7 +1,8 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.projektuppgift_androidutveckling.R
 
 class MapInfoWindowActivity : AppCompatActivity() {
 

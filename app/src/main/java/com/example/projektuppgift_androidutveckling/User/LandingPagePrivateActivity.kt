@@ -8,6 +8,7 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.projektuppgift_androidutveckling.User.*
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -40,7 +41,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
         val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
         landingPageMapButton.setOnClickListener {
-            val intent = Intent(this,MapFoodActivity::class.java)
+            val intent = Intent(this, MapFoodActivity::class.java)
             startActivity(intent)
         }
         val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
@@ -81,7 +82,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                 }
                 R.id.nav_settings -> {
 
-                    val intent = Intent(this,SettingsActivity::class.java)
+                    val intent = Intent(this, SettingsActivity::class.java)
                     startActivity(intent)
 
                     true

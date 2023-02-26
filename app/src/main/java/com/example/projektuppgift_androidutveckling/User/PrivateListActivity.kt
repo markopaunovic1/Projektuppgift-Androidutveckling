@@ -1,15 +1,12 @@
-package com.example.projektuppgift_androidutveckling
+package com.example.projektuppgift_androidutveckling.User
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
-import com.google.firebase.firestore.DocumentId
+import com.example.projektuppgift_androidutveckling.R
+import com.example.projektuppgift_androidutveckling.Restaurant
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
@@ -35,7 +32,8 @@ class PrivateListActivity : AppCompatActivity() {
                 }
             }
             recyclerView.adapter = RecyclerAdapterRestaurante(this@PrivateListActivity,
-                RestaurantInfoDataManager.restaurantList)
+                RestaurantInfoDataManager.restaurantList
+            )
         }
 
     }
