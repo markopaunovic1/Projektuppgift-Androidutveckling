@@ -23,8 +23,6 @@ class LandingPagePrivateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing_page)
 
-        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
-        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
 
 
         val menuButton = findViewById<ImageButton>(R.id.menuButton)
@@ -42,7 +40,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
         val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
         landingPageMapButton.setOnClickListener {
-            val intent = Intent(this,MapFood::class.java)
+            val intent = Intent(this,MapFoodActivity::class.java)
             startActivity(intent)
         }
         val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
@@ -76,7 +74,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                 }
                 R.id.nav_service -> {
 
-                    val intent = Intent(this, SupportWindow::class.java)
+                    val intent = Intent(this, SupportWindowActivity::class.java)
                     startActivity(intent)
 
                     true

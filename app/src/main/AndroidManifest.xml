@@ -31,14 +31,14 @@
             android:value="AIzaSyBZC2DBLl-NBiMqME9UQhgMdctr_S_-JQ4" />
 
         <activity
-            android:name=".MapFood"
+            android:name=".MapFoodActivity"
             android:exported="false"
             android:label="@string/title_activity_map_food" />
         <activity
             android:name=".DishesMenuRecyclerView"
             android:exported="false" />
         <activity
-            android:name=".SupportWindow"
+            android:name=".SupportWindowActivity"
             android:exported="false" />
         <activity
             android:name=".ProfileActivity"

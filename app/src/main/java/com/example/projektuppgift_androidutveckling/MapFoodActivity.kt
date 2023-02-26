@@ -5,7 +5,7 @@ import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-import com.google.android.gms.maps.CameraUpdateFactory
+
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -16,9 +16,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
-class MapFood : AppCompatActivity(), OnMapReadyCallback {
+class MapFoodActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapFoodBinding
@@ -53,76 +54,78 @@ class MapFood : AppCompatActivity(), OnMapReadyCallback {
         auth = Firebase.auth
 
 
-        val adapter = PlacesInfoAdapter(this)
+
+        val adapter = RestaurantMapInfoAdapter(this)
         mMap.setInfoWindowAdapter(adapter)
 
-        // Add a marker in Sydney and move the camera
-//        val sydney = LatLng(-34.0, 151.0)
-//        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
 
-//        createMarkers()
 
-        createPlaces()
+        createRestaurant()
+//        createRestaurantMarkers()
         showGpsLocation(GpsActivity())
 
     }
 
-    fun createMarkers() {
-        var sthlm = LatLng(59.3, 18.0)
 
-        var marker1 = mMap.addMarker(
-            MarkerOptions()
-                .position(sthlm)
-                .title("Stockholm")
-                .snippet("Fint här")
-        )
+    fun createRestaurant()    {
 
-        var marker2 = mMap.addMarker(
-            MarkerOptions()
-                .position(LatLng(60.0,19.0))
-                .title("plats2")
-                .snippet("Fint här")
-        )
+        val geocoder = Geocoder(this)
+        db.collection("Restaurants").get()
+            .addOnSuccessListener { result ->
+                for (restaurant in result) {
+                    val resturantAddress = restaurant.data["restaurantAddress"].toString()
 
-        var marker3 = mMap.addMarker(
-            MarkerOptions()
-                .position(LatLng(58.0, 17.0))
-                .title("plats3")
-                .snippet("Fint här")
-        )
+                    val addresses: List<Address> = geocoder.getFromLocationName(resturantAddress, 1)
+                    if (addresses != null && !addresses.isEmpty()) {
+                        val address = addresses[0]
+                        val latitude = address.latitude
+                        val longitude = address.longitude
+                        val latLng = LatLng(latitude, longitude)
+                        val marker = mMap.addMarker(MarkerOptions().position(latLng))
+                        marker!!.tag = restaurant
 
 
 
 
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                println("Error getting documents: $exception")
+            }
     }
 
-    fun createPlaces()    {
+
+    fun createRestaurantMarkers() {
 
         val geocoder = Geocoder(this)
 
-        for (place in PrivateListActivity.RestaurantInfoDataManager.restaurantList) {
-            val placeName = place.toString()
+        for (restaurant in PrivateListActivity.RestaurantInfoDataManager.restaurantList) {
+            val restaurantAddresss = restaurant.restaurantAddress
 
-            val addresses: List<Address> = geocoder.getFromLocationName(placeName, 1)
+            val addresses: List<Address> = geocoder.getFromLocationName(restaurantAddresss, 1)
             if (addresses != null && !addresses.isEmpty()) {
                 val address = addresses[0]
                 val latitude = address.latitude
                 val longitude = address.longitude
                 val latLng = LatLng(latitude, longitude)
                 val marker = mMap.addMarker(MarkerOptions().position(latLng))
-                marker!!.tag = place
+                marker!!.tag = restaurant
             }
         }
+
     }
 
     fun showGpsLocation(GpsActivity: GpsActivity) {
+
 
         val latty = GpsActivity.lat
         val longy = GpsActivity.long
         val latNlongy = LatLng(latty, longy)
         val user = auth.currentUser
 
+//        This part zooms in on the user location
+//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latNlongy, 10f))
 
 
 
@@ -130,4 +133,6 @@ class MapFood : AppCompatActivity(), OnMapReadyCallback {
         marker!!.tag = user
 
     }
+
+
 }

@@ -4,9 +4,9 @@
     <string name="close_nav">Close nav drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-<<<<<<<<< Temporary merge branch 1
+
     <string name="title_activity_map_food">MapFood</string>
-=========
+
     <string name="f_r_och_efternamn">För och efternamn</string>
     <string name="l_senord">Lösenord</string>
     <string name="spara">Spara</string>
@@ -15,5 +15,5 @@
     <string name="adress">Adress</string>
     <string name="f_r_efternamn"><![CDATA[För & efternamn]]></string>
     <string name="din_personliga_information">Din personliga information</string>
->>>>>>>>> Temporary merge branch 2
+
 </resources>

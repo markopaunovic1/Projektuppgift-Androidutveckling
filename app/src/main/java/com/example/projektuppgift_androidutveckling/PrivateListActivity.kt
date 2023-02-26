@@ -52,6 +52,7 @@ class PrivateListActivity : AppCompatActivity() {
         val restaurantList = mutableListOf<Restaurant>()
 
         init {
+
             restaurantList.add(Restaurant(restaurantName = "Test"))
         }
     }
