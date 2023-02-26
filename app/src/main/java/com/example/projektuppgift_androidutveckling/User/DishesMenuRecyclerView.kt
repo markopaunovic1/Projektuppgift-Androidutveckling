@@ -1,9 +1,13 @@
 package com.example.projektuppgift_androidutveckling.User
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projektuppgift_androidutveckling.Cart
 import com.example.projektuppgift_androidutveckling.Company.RestaurantRecyclerViewAdapter
 import com.example.projektuppgift_androidutveckling.Dish
 import com.example.projektuppgift_androidutveckling.R
@@ -28,6 +32,12 @@ class DishesMenuRecyclerView : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.DishesMenuRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this@DishesMenuRecyclerView)
+
+        val cartButton = findViewById<ImageButton>(R.id.CartButton)
+        cartButton.setOnClickListener {
+            val intent = Intent(this, Cart::class.java)
+            startActivity(intent)
+        }
 
         val position = intent.getIntExtra("Key", -1)
         val restaurantPosition = PrivateListActivity.RestaurantInfoDataManager.restaurantList[position].documentId

@@ -4,9 +4,11 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projektuppgift_androidutveckling.CartManager
 import com.example.projektuppgift_androidutveckling.Dish
 import com.example.projektuppgift_androidutveckling.R
 import com.squareup.picasso.Picasso
@@ -22,6 +24,7 @@ class MenuAdapter (val context : Context, val menuList : List<Dish>)
 
     override fun onBindViewHolder(holder: MenuAdapter.ViewHolder, position: Int) {
         val dish = menuList[position]
+        holder.dishPosition = position
         holder.name.text = dish.dishName
         holder.ingredients.text = dish.dishIngredients
         holder.price.text = dish.dishPrice
@@ -37,5 +40,12 @@ class MenuAdapter (val context : Context, val menuList : List<Dish>)
         val ingredients = itemView.findViewById<TextView>(R.id.ingredientsTV)
         val price = itemView.findViewById<TextView>(R.id.priceTextView)
         val image = itemView.findViewById<ImageView>(R.id.dishIV)
+        val addDishButton = itemView.findViewById<ImageButton>(R.id.AddDishButton)
+        var dishPosition = 0
+        init {
+            addDishButton.setOnClickListener {
+                CartManager.cartList.add(menuList[dishPosition])
+            }
+        }
     }
 }
