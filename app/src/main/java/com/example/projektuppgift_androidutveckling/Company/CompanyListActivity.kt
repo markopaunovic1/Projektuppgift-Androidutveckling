@@ -1,7 +1,8 @@
 package com.example.projektuppgift_androidutveckling
 
+import com.example.projektuppgift_androidutveckling.Company.AddFood
+import com.example.projektuppgift_androidutveckling.Company.RestaurantRecyclerViewAdapter
 import android.content.Intent
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,6 +41,7 @@ class CompanyListActivity : AppCompatActivity() {
                     }
                 }
                 recyclerView.adapter = RestaurantRecyclerViewAdapter(this@CompanyListActivity, RestaurantDataManager.dishList)
+                recyclerView.adapter?.notifyDataSetChanged()
             }
         }
 
