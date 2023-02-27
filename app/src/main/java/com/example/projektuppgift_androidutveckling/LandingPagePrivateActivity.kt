@@ -36,6 +36,20 @@ class LandingPagePrivateActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+<<<<<<< HEAD
+=======
+        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
+        landingPageMapButton.setOnClickListener {
+            val intent = Intent(this,MapFood::class.java)
+            startActivity(intent)
+        }
+        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
+        landPageCampaignButton.setOnClickListener {
+
+        }
+
+
+>>>>>>> main
         auth = Firebase.auth
 
         navOptions()
@@ -67,6 +81,9 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_settings -> {
+
+                    val intent = Intent(this,SettingsActivity::class.java)
+                    startActivity(intent)
 
                     true
                 }
