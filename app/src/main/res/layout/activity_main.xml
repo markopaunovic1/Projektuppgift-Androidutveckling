@@ -4,59 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainlayout"
+    android:background="@drawable/backgorundmain"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="228dp"
+        android:layout_marginBottom="7dp"
         android:text="Skapa konto"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/createPrivButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.259"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.96" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="260dp"
+        android:layout_marginBottom="7dp"
         android:text="Logga in"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/logCompButton"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/logPrivButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.229"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createPrivButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/createCompButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="44dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toTopOf="@+id/logCompButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rectanglesmallright" />
 
     <ImageButton
         android:id="@+id/createPrivButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="56dp"
         android:background="@color/cardview_shadow_end_color"
-        app:layout_constraintBottom_toTopOf="@+id/logCompButton"
-        app:layout_constraintEnd_toStartOf="@+id/createCompButton"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/rectanglesmall" />
 
@@ -64,7 +61,7 @@
         android:id="@+id/logCompButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="80dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,28 +72,12 @@
         android:id="@+id/logPrivButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginStart="60dp"
         android:layout_marginBottom="80dp"
         android:background="@color/cardview_shadow_end_color"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/logCompButton"
-        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rectanglesmall" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/createPrivButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView4"
@@ -145,8 +126,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="@+id/logCompButton"
         app:layout_constraintEnd_toEndOf="@+id/logCompButton"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/logCompButton"
         app:layout_constraintTop_toTopOf="@+id/logCompButton"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.323" />
 </androidx.constraintlayout.widget.ConstraintLayout>
