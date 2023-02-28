@@ -20,7 +20,3 @@ class Cart : AppCompatActivity() {
 
     }
 }
-object CartManager{
-
-    val cartList = mutableListOf<Dish>()
-}
