@@ -2,11 +2,11 @@ package com.example.projektuppgift_androidutveckling
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.projektuppgift_androidutveckling.Company.RestaurantChoice
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.DocumentId
@@ -42,7 +42,7 @@ class CompanyActivity : AppCompatActivity() {
         }
     }
     fun nextActivity() {
-        val intent = Intent(this, CompanyListActivity::class.java)
+        val intent = Intent(this, RestaurantChoice::class.java)
         startActivity(intent)
     }
 

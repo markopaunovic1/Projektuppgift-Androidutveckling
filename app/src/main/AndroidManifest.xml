@@ -21,6 +21,19 @@
             android:exported="false" />
         <activity
             android:name=".User.CheckOutActivity"
+            android:name=".User.UserChoice"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserOffersRecyclerView"
+            android:exported="false" />
+        <activity
+            android:name=".Company.AddOffer"
+            android:exported="false" />
+        <activity
+            android:name=".Company.OffersRecyclerView"
+            android:exported="false" />
+        <activity
+            android:name=".Company.RestaurantChoice"
             android:exported="false" />
         <activity
             android:name=".Cart"
