@@ -4,3 +4,6 @@ object CartManager{
 
     val cartList = mutableListOf<Dish>()
 }
+fun totalSum(){
+    
+}

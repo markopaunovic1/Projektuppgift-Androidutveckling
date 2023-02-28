@@ -26,7 +26,7 @@
         android:id="@+id/goToPaymentButton"
         android:layout_width="191dp"
         android:layout_height="52dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="100dp"
         android:layout_marginBottom="16dp"
         android:text="gå till kassan"
         app:layout_constraintBottom_toBottomOf="parent"
