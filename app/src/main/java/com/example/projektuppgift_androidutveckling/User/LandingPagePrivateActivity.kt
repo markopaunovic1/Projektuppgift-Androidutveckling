@@ -41,14 +41,10 @@ class LandingPagePrivateActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val landingPageMapButton = findViewById<ImageButton>(R.id.LandingPageMapsButton)
+        val landingPageMapButton = findViewById<ImageButton>(R.id.landingPageMapButton)
         landingPageMapButton.setOnClickListener {
             val intent = Intent(this, MapFood::class.java)
             startActivity(intent)
-        }
-        val landPageCampaignButton = findViewById<ImageButton>(R.id.LandPageCampaignButton)
-        landPageCampaignButton.setOnClickListener {
-
         }
 
 

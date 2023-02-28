@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import com.example.projektuppgift_androidutveckling.CompanyListActivity
 import com.example.projektuppgift_androidutveckling.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -38,7 +37,7 @@ class CompanyLogInActivity : AppCompatActivity() {
         }
     }
     fun gotToAddActivity() {
-        val intent = Intent(this, CompanyListActivity::class.java)
+        val intent = Intent(this, RestaurantChoice::class.java)
         startActivity(intent)
     }
 

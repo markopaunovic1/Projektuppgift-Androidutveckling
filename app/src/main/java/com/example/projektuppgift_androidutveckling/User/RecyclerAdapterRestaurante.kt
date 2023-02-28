@@ -50,7 +50,7 @@ class RecyclerAdapterRestaurante(val context : Context, val restaurants : List<R
 
         init {
             itemView.setOnClickListener{
-                val intent = Intent (context, DishesMenuRecyclerView::class.java)
+                val intent = Intent (context, UserChoice::class.java)
                 intent.putExtra("Key", listItemPosition)
                 context.startActivity(intent)
             }
