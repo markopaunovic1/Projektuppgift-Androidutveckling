@@ -17,6 +17,10 @@
         android:theme="@style/Theme.ProjektuppgiftAndroidutveckling"
         tools:targetApi="31">
         <activity
+            android:name=".PaymentComfirmation"
+            android:exported="false" />
+        <activity
+            android:name=".User.CheckOutActivity"
             android:name=".User.UserChoice"
             android:exported="false" />
         <activity

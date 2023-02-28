@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 
-class CartDishRecyclerAdapter(val context : Context)
+class CartDishRecyclerAdapter(val context : Context, val totalPriceTextView : TextView)
     : RecyclerView.Adapter<CartDishRecyclerAdapter.viewHolder>(){
     val layoutInflater = LayoutInflater.from(context)
 
@@ -35,6 +35,7 @@ class CartDishRecyclerAdapter(val context : Context)
     fun deleteDish(position: Int){
         CartManager.cartList.removeAt(position)
         notifyDataSetChanged()
+        totalPriceTextView.text = CartManager.totalSum().toString() + "kr"
     }
 
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,6 +49,7 @@ class CartDishRecyclerAdapter(val context : Context)
         init {
             deletDishButton.setOnClickListener {
                 deleteDish(listItemPosition)
+
 
             }
         }
