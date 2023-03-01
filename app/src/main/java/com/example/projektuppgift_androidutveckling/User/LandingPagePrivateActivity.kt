@@ -98,6 +98,8 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_info -> {
+                    val intent = Intent(this, AboutUsActivity::class.java)
+                    startActivity(intent)
 
                     true
                 }
