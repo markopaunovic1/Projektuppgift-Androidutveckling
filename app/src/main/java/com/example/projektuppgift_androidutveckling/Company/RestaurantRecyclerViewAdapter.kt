@@ -66,8 +66,8 @@ class RestaurantRecyclerViewAdapter (val context : Context, val dishes : List<Di
                     .document(selectedDishId).delete()
                     .addOnSuccessListener { Toast.makeText(context, "Delete Successful!", Toast.LENGTH_SHORT).show()
                         RestaurantDataManager.dishList.removeAt(listItemPosition)
-                        notifyItemRemoved(listItemPosition)}
-                    .addOnFailureListener { Toast.makeText(context, "Delete Unsuccessful", Toast.LENGTH_SHORT).show()}
+                        notifyItemRemoved(listItemPosition)
+                        notifyDataSetChanged()}
             }
         }
     }

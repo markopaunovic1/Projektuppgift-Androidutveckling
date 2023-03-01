@@ -58,7 +58,8 @@ class CompanyOfferAdapter (val context : Context, val offers : List<Offer>)
                     .document(selectedOfferId).delete()
                     .addOnSuccessListener { Toast.makeText(context, "Delete Successful!", Toast.LENGTH_SHORT).show()
                         OfferDataManager.offerList.removeAt(positio)
-                        notifyItemRemoved(positio)}
+                        notifyItemRemoved(positio)
+                    notifyDataSetChanged()}
                     .addOnFailureListener { Toast.makeText(context, "Delete Unsuccessful", Toast.LENGTH_SHORT).show()}
             }
         }
