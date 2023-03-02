@@ -2,13 +2,11 @@ package com.example.projektuppgift_androidutveckling.User
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CheckBox
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projektuppgift_androidutveckling.R
 import com.example.projektuppgift_androidutveckling.Restaurant
@@ -16,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 
 class UserFavoriteRestaurantAdapter(val context: Context, val favoriteRestaurants: List<Restaurant>) :
     RecyclerView.Adapter<UserFavoriteRestaurantAdapter.viewHolder>() {
@@ -33,6 +32,9 @@ class UserFavoriteRestaurantAdapter(val context: Context, val favoriteRestaurant
         holder.nameOfFavoriteRestaurant.text = favoriteRestaurants.restaurantName
         holder.listItemPosition = position
         holder.removeRestaurant
+        Log.d("!!!", "${Picasso.get().load(favoriteRestaurants.restaurantImage).into(holder.imageOnFavoriteRestaurant)}")
+
+        Picasso.get().load(favoriteRestaurants.restaurantImage).into(holder.imageOnFavoriteRestaurant)
     }
 
     override fun getItemCount(): Int {
@@ -42,13 +44,14 @@ class UserFavoriteRestaurantAdapter(val context: Context, val favoriteRestaurant
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val nameOfFavoriteRestaurant = itemView.findViewById<TextView>(R.id.userFavoriteRestaurant)
+        val imageOnFavoriteRestaurant = itemView.findViewById<ImageView>(R.id.userFavoriteImage)
         val removeRestaurant = itemView.findViewById<ImageButton>(R.id.ib_removeRestaurant)
         var listItemPosition = 0
 
         init {
 
             itemView.setOnClickListener {
-                val intent = Intent(context, DishesMenuRecyclerView::class.java)
+                val intent = Intent(context, UserChoice::class.java)
                 intent.putExtra("Key", listItemPosition)
                 context.startActivity(intent)
             }

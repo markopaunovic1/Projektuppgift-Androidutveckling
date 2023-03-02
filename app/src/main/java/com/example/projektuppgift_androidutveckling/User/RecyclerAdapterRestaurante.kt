@@ -39,15 +39,6 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
 
         Picasso.get().load(restaurante.restaurantImage).into(holder.imageOnRestaurant)
 
-        holder.restaurantFavoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
-            if (isChecked) {
-                Toast.makeText(context, "Added to favorite", Toast.LENGTH_LONG).show()
-            } else {
-                Toast.makeText(context, "Removed from favorite", Toast.LENGTH_LONG).show()
-            }
-        }
-
-
     }
 
     override fun getItemCount(): Int {
