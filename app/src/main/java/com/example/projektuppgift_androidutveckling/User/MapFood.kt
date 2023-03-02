@@ -9,7 +9,6 @@ import android.os.Bundle
 import androidx.core.content.ContextCompat
 import com.example.projektuppgift_androidutveckling.R
 import com.example.projektuppgift_androidutveckling.Restaurant
-
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment

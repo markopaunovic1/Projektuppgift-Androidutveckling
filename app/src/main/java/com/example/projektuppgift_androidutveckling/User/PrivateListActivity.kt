@@ -1,8 +1,10 @@
 package com.example.projektuppgift_androidutveckling.User
 
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,7 +40,7 @@ class PrivateListActivity : AppCompatActivity() {
                 RestaurantInfoDataManager.restaurantList
             )
         }
-
+        backButton = findViewById(R.id.backButtonResta)
         backButton.setOnClickListener {
             val intent = Intent(this, LandingPagePrivateActivity::class.java)
             startActivity(intent)
