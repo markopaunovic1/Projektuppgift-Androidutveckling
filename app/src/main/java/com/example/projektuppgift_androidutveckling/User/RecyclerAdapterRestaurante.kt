@@ -2,7 +2,6 @@ package com.example.projektuppgift_androidutveckling.User
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projektuppgift_androidutveckling.R
 import com.example.projektuppgift_androidutveckling.Restaurant
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Restaurant>) :
     RecyclerView.Adapter<RecyclerAdapterRestaurante.viewHolder>() {
@@ -24,11 +26,11 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
     }
 
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
+
         val restaurante = restaurants[position]
         holder.nameTextView.text = restaurante.restaurantName
         holder.listItemPosition = position
-        holder.favoriteCheckBox.isClickable
-
+        holder.restaurantFavoriteCheckBox.isClickable
     }
 
     override fun getItemCount(): Int {
@@ -37,7 +39,7 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
 
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameTextView = itemView.findViewById<TextView>(R.id.nameOfRestaurantTextView)
-        val favoriteCheckBox = itemView.findViewById<CheckBox>(R.id.cb_Favorite)
+        val restaurantFavoriteCheckBox = itemView.findViewById<CheckBox>(R.id.cb_Favorite)
         var listItemPosition = 0
 
         init {
@@ -46,14 +48,24 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
                 intent.putExtra("Key", listItemPosition)
                 context.startActivity(intent)
             }
-            favoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
+            restaurantFavoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
                 if (isChecked) {
-                    Log.d("!!!", "${restaurants[position]}")
-                    Toast.makeText(context, "Added to favorite", Toast.LENGTH_LONG).show()
-                } else {
-                    Log.d("!!!", "${restaurants[position]}")
-                    Toast.makeText(context, "Removed from favorite", Toast.LENGTH_LONG).show()
+                    addRestaurant()
+                    Toast.makeText(context, "Tillagd i dina favoriter", Toast.LENGTH_LONG).show()
                 }
+            }
+        }
+
+        val db = Firebase.firestore
+        val currentUser = Firebase.auth
+        private fun addRestaurant() {
+            if (currentUser != null) {
+                val db = Firebase.firestore
+                val currentUser = Firebase.auth
+
+                val favoriteRestaurant = Restaurant(restaurantName = nameTextView.text.toString())
+                db.collection("users").document(currentUser.uid!!).collection("favoriteRestaurants")
+                    .add(favoriteRestaurant)
             }
         }
     }

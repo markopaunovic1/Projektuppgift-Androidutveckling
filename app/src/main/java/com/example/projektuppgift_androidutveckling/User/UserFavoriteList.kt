@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projektuppgift_androidutveckling.R
 import com.example.projektuppgift_androidutveckling.Restaurant
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
@@ -23,29 +24,29 @@ class UserFavoriteList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_favorite_list)
 
+        auth = Firebase.auth
+
         db = Firebase.firestore
+        val currentUser = auth.currentUser
 
         recyclerView = findViewById(R.id.UserFavoriteRW)
         recyclerView.layoutManager = LinearLayoutManager(this@UserFavoriteList)
 
-        val docRef = db.collection("Restaurants")
+        val docRef = db.collection("users").document(currentUser!!.uid).collection("favoriteRestaurants")
         docRef.get().addOnSuccessListener { documentSnapshot ->
-            PrivateListActivity.RestaurantInfoDataManager.restaurantList.clear()
+           favoriteRestaurantDataManager.favoriteList.clear()
             for (document in documentSnapshot) {
                 val userFavorite = document.toObject<Restaurant>()
                 if (userFavorite != null) {
-                    RestaurantInfoDataManager.restaurantList.add(userFavorite)
+                    favoriteRestaurantDataManager.favoriteList.add(userFavorite)
                 }
             }
-            recyclerView.adapter = UserFavoriteRestaurantAdapter(this@UserFavoriteList, RestaurantInfoDataManager.restaurantList
+            recyclerView.adapter = UserFavoriteRestaurantAdapter(this@UserFavoriteList, favoriteRestaurantDataManager.favoriteList
             )
+            recyclerView.adapter?.notifyDataSetChanged()
         }
     }
-    override fun onResume() {
-        super.onResume()
-        recyclerView.adapter?.notifyDataSetChanged()
-    }
-    object RestaurantInfoDataManager {
-        val restaurantList = mutableListOf<Restaurant>()
+    object favoriteRestaurantDataManager {
+        val favoriteList = mutableListOf<Restaurant>()
     }
 }
