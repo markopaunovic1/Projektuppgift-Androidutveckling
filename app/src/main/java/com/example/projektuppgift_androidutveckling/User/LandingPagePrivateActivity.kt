@@ -72,6 +72,8 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_favorite -> {
+                    val intent = Intent(this, UserFavoriteList::class.java)
+                    startActivity(intent)
 
                     true
                 }

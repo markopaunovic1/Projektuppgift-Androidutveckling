@@ -5,42 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/privRestaurantImage"
-        android:layout_width="370dp"
+    <ImageView
+        android:id="@+id/privRestaurantImage2"
+        android:layout_width="350dp"
         android:layout_height="140dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="50dp"
+        android:background="@drawable/food"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:shapeAppearance="@style/roundedImageView" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/nameOfRestaurantTextView"
+        android:id="@+id/userFavoriteRestaurant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/open_sans"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="This is a restuarant "
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/privRestaurantImage" />
-
-    <CheckBox
-        android:id="@+id/cb_Favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="5dp"
-        android:button="@drawable/selector_favorit_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:useMaterialThemeColors="false" />
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privRestaurantImage2" />
+
+    <ImageButton
+        android:id="@+id/ib_removeRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_delete_forever_24" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
