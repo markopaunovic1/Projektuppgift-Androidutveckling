@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/landingback"
+    android:background="@drawable/backgroundprof"
     tools:context=".User.ProfileActivity">
 
 
@@ -60,6 +60,7 @@
         tools:ignore="RtlSymmetry" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -105,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="116dp"
         android:text="@string/din_personliga_information"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -169,16 +170,18 @@
     <Button
         android:id="@+id/profileSaveButton"
         android:layout_width="180dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginStart="160dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="120dp"
         android:background="@drawable/custom_button_prof"
         android:text="@string/spara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileNumberText"
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageButton
         android:id="@+id/backButtonProfile"
