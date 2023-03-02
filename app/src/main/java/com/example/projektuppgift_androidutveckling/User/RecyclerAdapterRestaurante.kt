@@ -21,6 +21,9 @@ import com.squareup.picasso.Picasso
 class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Restaurant>) :
     RecyclerView.Adapter<RecyclerAdapterRestaurante.viewHolder>() {
     val layoutInflater = LayoutInflater.from(context)
+    val db = Firebase.firestore
+    val auth: FirebaseAuth = Firebase.auth
+    val currentUser = auth.currentUser
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         val itemView = layoutInflater.inflate(R.layout.private_resturant_list, parent, false)
@@ -36,12 +39,12 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
 
         Picasso.get().load(restaurante.restaurantImage).into(holder.imageOnRestaurant)
 
-        holder.favoriteCheckBox.setOnCheckedChangeListener { checkBox , isChecked ->
-             if (isChecked) {
-                 Toast.makeText(context, "Added to favorite", Toast.LENGTH_LONG).show()
-             } else {
-                 Toast.makeText(context, "Removed from favorite", Toast.LENGTH_LONG).show()
-             }
+        holder.restaurantFavoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
+            if (isChecked) {
+                Toast.makeText(context, "Added to favorite", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(context, "Removed from favorite", Toast.LENGTH_LONG).show()
+            }
         }
 
 
@@ -54,43 +57,33 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val nameTextView = itemView.findViewById<TextView>(R.id.nameOfRestaurantTextView)
+        val imageOnRestaurant = itemView.findViewById<ImageView>(R.id.privRestaurantImage)
         val restaurantFavoriteCheckBox = itemView.findViewById<CheckBox>(R.id.cb_Favorite)
         var listItemPosition = 0
 
         init {
             itemView.setOnClickListener {
-                val intent = Intent(context, DishesMenuRecyclerView::class.java)
-        val favoriteCheckBox = itemView.findViewById<CheckBox>(R.id.cb_Favorite)
-        val imageOnRestaurant = itemView.findViewById<ImageView>(R.id.privRestaurantImage)
-        var listItemPosition = 0
-
-        init {
-            itemView.setOnClickListener{
-                val intent = Intent (context, UserChoice::class.java)
-
+                val intent = Intent(context, UserChoice::class.java)
                 intent.putExtra("Key", listItemPosition)
                 context.startActivity(intent)
             }
-            restaurantFavoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
-                if (isChecked) {
-                    addRestaurant()
-                    Toast.makeText(context, "Tillagd i dina favoriter", Toast.LENGTH_SHORT).show()
+                restaurantFavoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
+                    if (isChecked) {
+                        addRestaurant()
+                        Toast.makeText(context, "Tillagd i dina favoriter", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
-            }
         }
-
-        val db = Firebase.firestore
-        val auth: FirebaseAuth = Firebase.auth
-        val currentUser = auth.currentUser
-
         private fun addRestaurant() {
-
             if (currentUser != null) {
                 val db = Firebase.firestore
                 val currentUser = Firebase.auth
 
-                val favoriteRestaurant = Restaurant(restaurantName = nameTextView.text.toString())
-                db.collection("users").document(currentUser.uid!!).collection("favoriteRestaurants")
+                val favoriteRestaurant =
+                    Restaurant(restaurantName = nameTextView.text.toString())
+                db.collection("users").document(currentUser.uid!!)
+                    .collection("favoriteRestaurants")
                     .add(favoriteRestaurant)
             }
         }
