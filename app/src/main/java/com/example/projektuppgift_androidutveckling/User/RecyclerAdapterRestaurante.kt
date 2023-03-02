@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projektuppgift_androidutveckling.R
 import com.example.projektuppgift_androidutveckling.Restaurant
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -18,7 +19,6 @@ import com.google.firebase.ktx.Firebase
 class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Restaurant>) :
     RecyclerView.Adapter<RecyclerAdapterRestaurante.viewHolder>() {
     val layoutInflater = LayoutInflater.from(context)
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewHolder {
         val itemView = layoutInflater.inflate(R.layout.private_resturant_list, parent, false)
@@ -30,7 +30,7 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
         val restaurante = restaurants[position]
         holder.nameTextView.text = restaurante.restaurantName
         holder.listItemPosition = position
-        holder.restaurantFavoriteCheckBox.isClickable
+        holder.restaurantFavoriteCheckBox.isChecked
     }
 
     override fun getItemCount(): Int {
@@ -38,6 +38,7 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
     }
 
     inner class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         val nameTextView = itemView.findViewById<TextView>(R.id.nameOfRestaurantTextView)
         val restaurantFavoriteCheckBox = itemView.findViewById<CheckBox>(R.id.cb_Favorite)
         var listItemPosition = 0
@@ -51,14 +52,17 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
             restaurantFavoriteCheckBox.setOnCheckedChangeListener { checkBox, isChecked ->
                 if (isChecked) {
                     addRestaurant()
-                    Toast.makeText(context, "Tillagd i dina favoriter", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "Tillagd i dina favoriter", Toast.LENGTH_SHORT).show()
                 }
             }
         }
 
         val db = Firebase.firestore
-        val currentUser = Firebase.auth
+        val auth: FirebaseAuth = Firebase.auth
+        val currentUser = auth.currentUser
+
         private fun addRestaurant() {
+
             if (currentUser != null) {
                 val db = Firebase.firestore
                 val currentUser = Firebase.auth

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mainlayout"
-    tools:context=".User.PrivateListActivity">
+    tools:context=".User.UserFavoriteList">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/UserFavoriteRW"
@@ -16,5 +16,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.906"
-        tools:listitem="@layout/private_resturant_list" />
+        tools:listitem="@layout/favorite_restaurant_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>

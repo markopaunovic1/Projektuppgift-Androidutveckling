@@ -32,14 +32,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/privRestaurantImage2" />
 
-    <CheckBox
-        android:id="@+id/cb_UserFavorite"
+    <ImageButton
+        android:id="@+id/ib_removeRestaurant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
-        android:button="@drawable/selector_favorit_item_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:useMaterialThemeColors="false" />
+        app:srcCompat="@drawable/baseline_delete_forever_24" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

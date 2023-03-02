@@ -2,6 +2,7 @@ package com.example.projektuppgift_androidutveckling.User
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projektuppgift_androidutveckling.R
@@ -12,13 +13,15 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 
 
 class UserFavoriteList : AppCompatActivity() {
 
-    lateinit var recyclerView: RecyclerView
+    lateinit var recyclerView2: RecyclerView
     lateinit var db: FirebaseFirestore
     lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +32,8 @@ class UserFavoriteList : AppCompatActivity() {
         db = Firebase.firestore
         val currentUser = auth.currentUser
 
-        recyclerView = findViewById(R.id.UserFavoriteRW)
-        recyclerView.layoutManager = LinearLayoutManager(this@UserFavoriteList)
+        recyclerView2 = findViewById(R.id.UserFavoriteRW)
+        recyclerView2.layoutManager = LinearLayoutManager(this@UserFavoriteList)
 
         val docRef = db.collection("users").document(currentUser!!.uid).collection("favoriteRestaurants")
         docRef.get().addOnSuccessListener { documentSnapshot ->
@@ -41,9 +44,9 @@ class UserFavoriteList : AppCompatActivity() {
                     favoriteRestaurantDataManager.favoriteList.add(userFavorite)
                 }
             }
-            recyclerView.adapter = UserFavoriteRestaurantAdapter(this@UserFavoriteList, favoriteRestaurantDataManager.favoriteList
+            recyclerView2.adapter = UserFavoriteRestaurantAdapter(this@UserFavoriteList, favoriteRestaurantDataManager.favoriteList
             )
-            recyclerView.adapter?.notifyDataSetChanged()
+            recyclerView2.adapter?.notifyDataSetChanged()
         }
     }
     object favoriteRestaurantDataManager {
