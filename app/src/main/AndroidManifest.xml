@@ -24,6 +24,8 @@
             android:exported="false" />
         <activity
             android:name=".User.CheckOutActivity"
+            android:exported="false" />
+        <activity
             android:name=".User.UserChoice"
             android:exported="false" />
         <activity

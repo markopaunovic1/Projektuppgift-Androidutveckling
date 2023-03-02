@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
+    android:background="@drawable/landingpageback2"
     tools:context=".User.SettingsActivity">
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="197dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/anton"
-        android:text="Settings"
-        android:textSize="34sp"
+        android:layout_width="220dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="164dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Inställningar"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,92 +27,114 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="104dp"
-        android:fontFamily="@font/anton"
-        android:text="Change theme Dark/Light"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="34dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Ändra tema Dark/Light"
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toStartOf="@+id/LightAndDarkSwitch"
+        app:layout_constraintStart_toEndOf="@+id/imageView" />
 
     <Switch
         android:id="@+id/LightAndDarkSwitch"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_marginTop="172dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="236dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="29dp"
         android:layout_height="29dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="173dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView9"
         app:srcCompat="@drawable/baseline_brush_24" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/anton"
-        android:text="Push notification"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Notifikationer"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toStartOf="@+id/switch2"
+        app:layout_constraintStart_toEndOf="@+id/imageView3" />
 
     <Switch
         android:id="@+id/switch2"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LightAndDarkSwitch" />
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LightAndDarkSwitch"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="29dp"
         android:layout_height="29dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toStartOf="@+id/textView15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/baseline_notifications_off_24" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="@font/anton"
-        android:text="Location Service"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="412dp"
+        android:fontFamily="@font/open_sans"
+        android:text="Visa plats"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switch3"
+        app:layout_constraintStart_toEndOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="29dp"
         android:layout_height="29dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="412dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView18"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:srcCompat="@drawable/baseline_location_off_24" />
 
     <Switch
         android:id="@+id/switch3"
         android:layout_width="90dp"
         android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <ImageButton
+        android:id="@+id/backButtonSettings"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:background="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

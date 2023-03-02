@@ -1,9 +1,9 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.ProjektuppgiftAndroidutveckling" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.ProjektuppgiftAndroidutveckling" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/darkblue</item>
-        <item name="colorPrimaryVariant">@color/darkblue</item>
+        <item name="colorPrimary">@color/navy</item>
+        <item name="colorPrimaryVariant">@color/navy</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -26,5 +26,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
     </style>
 </resources>

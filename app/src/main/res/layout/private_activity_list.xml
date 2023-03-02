@@ -4,17 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainlayout"
+    android:background="@color/white"
     tools:context=".User.PrivateListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RestauranteRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="415dp"
+        android:layout_height="732dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906"
-        tools:listitem="@layout/private_resturant_list" />
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/private_resturant_list"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/backButtonResta"
+        android:layout_width="53dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="4dp"
+        android:background="@null"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
