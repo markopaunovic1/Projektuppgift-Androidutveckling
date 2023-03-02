@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/privRestaurantImage2"
+        android:id="@+id/userFavoriteImage"
         android:layout_width="350dp"
         android:layout_height="140dp"
         android:layout_marginTop="15dp"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/privRestaurantImage2" />
+        app:layout_constraintTop_toBottomOf="@+id/userFavoriteImage" />
 
     <ImageButton
         android:id="@+id/ib_removeRestaurant"
