@@ -103,15 +103,15 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_width="184dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="36dp"
         android:fontFamily="@font/open_sans"
-        android:text="Skapa konto"
+        android:text="Lägg till en bild och skapa ditt konto"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/createCompNameET"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.85"
+        app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -132,25 +132,14 @@
 
     <ImageView
         android:id="@+id/imageViewRes"
-        android:layout_width="121dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="52dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/baseline_image_24"
+        android:src="@drawable/iconaddimage2"
         app:layout_constraintBottom_toTopOf="@+id/createCompNameET"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.934" />
-
-    <ImageButton
-        android:id="@+id/addImageButton"
-        android:layout_width="53dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="152dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/createCompNameET"
-        app:layout_constraintStart_toEndOf="@+id/imageViewRes"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_add_circle_24" />
+        app:layout_constraintVertical_bias="0.925" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

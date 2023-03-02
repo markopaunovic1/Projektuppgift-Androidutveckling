@@ -5,8 +5,10 @@ import com.example.projektuppgift_androidutveckling.Company.RestaurantRecyclerVi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projektuppgift_androidutveckling.Company.RestaurantChoice
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -48,6 +50,12 @@ class CompanyListActivity : AppCompatActivity() {
         val addItemButton = findViewById<FloatingActionButton>(R.id.addItemButton)
         addItemButton.setOnClickListener{
             val intent = Intent(this@CompanyListActivity, AddFood:: class.java)
+            startActivity(intent)
+        }
+
+        val backButtonCompDish = findViewById<ImageButton>(R.id.backButtonCompanyMenu)
+        backButtonCompDish.setOnClickListener {
+            val intent = Intent(this, RestaurantChoice::class.java)
             startActivity(intent)
         }
 
