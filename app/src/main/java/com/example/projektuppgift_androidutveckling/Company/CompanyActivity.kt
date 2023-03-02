@@ -31,7 +31,6 @@ class CompanyActivity : AppCompatActivity() {
     lateinit var organisationNumberET: EditText
     lateinit var mobileNumberET: EditText
     lateinit var restaurantImage: ImageView
-    lateinit var addImage: ImageButton
     var imageResUri: Uri? = null
     var uriResImage: String? = null
     lateinit var storageRefr: StorageReference
@@ -57,8 +56,7 @@ class CompanyActivity : AppCompatActivity() {
             signUp()
         }
 
-        addImage = findViewById(R.id.addImageButton)
-        addImage.setOnClickListener {
+        restaurantImage.setOnClickListener {
             selectImage()
         }
 
