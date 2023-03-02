@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projektuppgift_androidutveckling.CartManager
 import com.example.projektuppgift_androidutveckling.Dish
@@ -41,10 +42,12 @@ class MenuAdapter (val context : Context, val menuList : List<Dish>)
         val price = itemView.findViewById<TextView>(R.id.priceTextView)
         val image = itemView.findViewById<ImageView>(R.id.dishIV)
         val addDishButton = itemView.findViewById<ImageButton>(R.id.AddDishButton)
+
         var dishPosition = 0
         init {
             addDishButton.setOnClickListener {
                 CartManager.cartList.add(menuList[dishPosition])
+                Toast.makeText(context, "Lade till " + menuList[dishPosition].dishName, Toast.LENGTH_SHORT).show()
             }
         }
     }

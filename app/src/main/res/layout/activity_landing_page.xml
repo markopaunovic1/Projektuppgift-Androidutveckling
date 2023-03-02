@@ -12,85 +12,44 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/landingpageback2"
+        android:background="@drawable/backgroundprof"
         android:orientation="vertical">
-        <!--
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/blue"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-        -->
-
 
         <ImageButton
             android:id="@+id/LandingPageRestaurantButton"
             android:layout_width="270dp"
             android:layout_height="120dp"
-            android:layout_marginTop="200dp"
-            android:layout_marginBottom="108dp"
+            android:layout_marginTop="232dp"
             android:background="@drawable/buttonc1"
-            app:layout_constraintBottom_toTopOf="@+id/LandingPageMapsButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
-            android:id="@+id/LandingPageMapsButton"
-            android:layout_width="270dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="200dp"
-            android:background="@drawable/buttonc3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LandPageCampaignButton"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/LandPageCampaignButton"
+            android:id="@+id/landingPageMapButton"
             android:layout_width="270dp"
             android:layout_height="120dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/buttonc2"
-            app:layout_constraintBottom_toTopOf="@+id/LandingPageMapsButton"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LandingPageRestaurantButton"
-            app:layout_constraintVertical_bias="0.0"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
             android:background="@null"
-            app:tint="#FFFFFF"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_menu_24" />
+            app:srcCompat="@drawable/baseline_menu_24"
+            app:tint="#FFFFFF" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

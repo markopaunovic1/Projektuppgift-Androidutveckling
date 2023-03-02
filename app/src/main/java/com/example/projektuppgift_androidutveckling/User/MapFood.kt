@@ -1,13 +1,14 @@
 package com.example.projektuppgift_androidutveckling.User
 
 import android.content.Context
+import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import com.example.projektuppgift_androidutveckling.R
 import com.example.projektuppgift_androidutveckling.Restaurant
-
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -15,6 +16,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.projektuppgift_androidutveckling.databinding.ActivityMapFoodBinding
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,6 +27,7 @@ import kotlinx.coroutines.GlobalScope
 
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
+import java.util.jar.Manifest
 
 
 class MapFood : AppCompatActivity(), OnMapReadyCallback {
@@ -57,19 +60,35 @@ class MapFood : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         db = Firebase.firestore
         auth = Firebase.auth
-
 
         val adapter = PlacesInfoAdapter(this)
         mMap.setInfoWindowAdapter(adapter)
 
+        // Kolla om appen har tillstånd att använda GPS
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
+            val swedenBounds = LatLngBounds(
+                LatLng((55.3617373725), 11.0273686052),  // SW bounds
+                LatLng((69.1062472602), 23.9033785336) // NE bounds
+            )
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(swedenBounds.center, 5.5f))
+            mMap.setLatLngBoundsForCameraTarget(swedenBounds)
+
+            // Appen har tillstånd att använda GPS, visa användarens position
+            mMap.isMyLocationEnabled = true
+            mMap.uiSettings.isMyLocationButtonEnabled = true
+        } else {
+
+            // Appen har inte tillstånd att använda GPS ännu
+            // Visa en fallback-plats eller informera användaren om att appen inte kan fungera som tänkt utan tillstånd
+
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(59.334591, 18.063240), 5f))
+
+        }
 
         createRestaurantMarker()
-        showGpsLocation(GpsActivity())
-
 
     }
 
@@ -90,7 +109,7 @@ class MapFood : AppCompatActivity(), OnMapReadyCallback {
                     val latLng = LatLng(latitude, longitude)
                     val marker = mMap.addMarker(MarkerOptions().position(latLng))
                     marker!!.tag = Restaurant(
-                        document.data["restaurantAddress"].toString(),
+                        document.data["documentId"].toString(),
                         document.data["restaurantName"].toString(),
                         document.data["restaurantAddress"].toString(),
 
@@ -101,38 +120,4 @@ class MapFood : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    fun showGpsLocation(GpsActivity: GpsActivity) {
-
-
-
-        db.collection("users").get().addOnSuccessListener { result ->
-            for (document in result) {
-
-
-
-                val latty = GpsActivity.lat
-                val longy = GpsActivity.long
-                val latNlongy = LatLng(latty, longy)
-                val user = auth.currentUser
-
-                // Zoom in on the marker   5f = zoom in, 15f = zoom out
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latNlongy, 5f))
-
-                val markerSecond = mMap.addMarker(MarkerOptions().position(latNlongy))
-
-                markerSecond!!.tag = User(
-                    document.data["documentId"].toString(),
-                    document.data["name"].toString(),
-                    document.data["email"].toString(),
-                    document.data["password"].toString(),
-                    document.data["adress"].toString(),
-                    document.data["phoneNr"].toString(),
-
-                    )
-
-
-
-            }
-        }
-    }
 }

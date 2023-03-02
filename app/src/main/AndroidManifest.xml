@@ -20,6 +20,30 @@
             android:name=".User.UserFavoriteList"
             android:exported="false" />
         <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentComfirmation"
+            android:exported="false" />
+        <activity
+            android:name=".User.CheckOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserChoice"
+            android:exported="false" />
+        <activity
+            android:name=".User.UserOffersRecyclerView"
+            android:exported="false" />
+        <activity
+            android:name=".Company.AddOffer"
+            android:exported="false" />
+        <activity
+            android:name=".Company.OffersRecyclerView"
+            android:exported="false" />
+        <activity
+            android:name=".Company.RestaurantChoice"
+            android:exported="false" />
+        <activity
             android:name=".Cart"
             android:exported="false" />
         <activity

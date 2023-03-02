@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FEFEFE"
+    tools:context=".AboutUsActivity">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="393dp"
+        android:layout_height="256dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/about" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="201dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="306dp"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="Om oss"
+        android:textColor="#3F51B4"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="344dp"
+        android:layout_height="113dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/bowlby_one"
+        android:text="MealMove"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#3F51B5"
+        android:textColorHint="#000000"
+        android:textSize="48sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="369dp"
+        android:layout_height="361dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/bebas_neue"
+        android:text="Välkommen till Mealmove!  Mealmove är en professionell matbeställningsapp.Här kommer vi bara att ge dig intressant innehåll, som du kommer att gilla väldigt mycket.Vi är dedikerade till att ge dig det bästa av matupplevelsen, med fokus på pålitlighet och beställa mat.Vi arbetar på att förvandla vår passion för mat till en blomstrande matapp.Vi hoppas att du gillar vår matapp lika mycket som vi tycker om att erbjuda dem till dig.Jag kommer att fortsätta lägga upp fler viktiga inlägg på min webbplats för er alla.Vänligen ge ditt stöd och kärlek.  Tack för att du besöker vår webbplats"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

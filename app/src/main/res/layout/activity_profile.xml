@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/landingback"
+    android:background="@drawable/backgroundprof"
     tools:context=".User.ProfileActivity">
 
 
-    <TextView
+    <EditText
         android:id="@+id/profileNameText"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -17,7 +17,7 @@
         android:elevation="5dp"
         android:ems="10"
         android:hint="@string/f_r_och_efternamn"
-        android:paddingStart="5dp"
+        android:paddingStart="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -25,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="RtlSymmetry" />
 
-    <TextView
+    <EditText
         android:id="@+id/profileEmailText"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -34,7 +34,7 @@
         android:elevation="5dp"
         android:ems="10"
         android:hint="Email"
-        android:paddingStart="5dp"
+        android:paddingStart="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profileAdressText"
         tools:ignore="RtlSymmetry" />
 
-    <TextView
+    <EditText
         android:id="@+id/profileNumberText"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -51,7 +51,7 @@
         android:elevation="5dp"
         android:ems="10"
         android:hint="Mobilnummer"
-        android:paddingStart="5dp"
+        android:paddingStart="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -59,24 +59,32 @@
         app:layout_constraintTop_toBottomOf="@+id/profileEmailText"
         tools:ignore="RtlSymmetry" />
 
-    <TextView
-        android:id="@+id/profilePasswordText"
-        android:layout_width="320dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/custom_button_prof"
-        android:elevation="5dp"
-        android:ems="10"
-        android:hint="Lösenord"
-        android:paddingStart="5dp"
-        android:textSize="16sp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="47dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profileNumberText"
-        tools:ignore="RtlSymmetry" />
+        app:passwordToggleEnabled="true">
 
-    <TextView
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/profilePasswordText"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/custom_button_prof"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:paddingTop="14dp"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
         android:id="@+id/profileAdressText"
         android:layout_width="320dp"
         android:layout_height="50dp"
@@ -85,7 +93,7 @@
         android:elevation="5dp"
         android:ems="10"
         android:hint="Adress"
-        android:paddingStart="5dp"
+        android:paddingStart="10dp"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -98,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="116dp"
         android:text="@string/din_personliga_information"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -162,16 +170,18 @@
     <Button
         android:id="@+id/profileSaveButton"
         android:layout_width="180dp"
-        android:layout_height="55dp"
+        android:layout_height="48dp"
         android:layout_marginStart="160dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginBottom="112dp"
         android:background="@drawable/custom_button_prof"
         android:text="@string/spara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileNumberText"
+        app:layout_constraintVertical_bias="0.024" />
 
     <ImageButton
         android:id="@+id/backButtonProfile"
@@ -181,5 +191,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_arrow_back_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

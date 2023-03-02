@@ -12,7 +12,7 @@
         android:layout_width="155dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Add image"
+        android:text="Lägg till bild"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,48 +20,55 @@
 
     <EditText
         android:id="@+id/addFoodNameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:paddingStart="5dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Namn"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addFoodImageButton" />
 
     <EditText
         android:id="@+id/addFoodPriceEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:paddingStart="5dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Pris"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addFoodNameEditText" />
 
     <EditText
         android:id="@+id/addFoodIngredientsEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="290dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button_prof"
         android:ems="10"
         android:hint="Ingredienser"
+        android:paddingStart="5dp"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addFoodPriceEditText" />
 
     <Button
         android:id="@+id/addFoodSaveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="16dp"
-        android:text="Save"
+        android:text="Spara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -77,5 +84,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_fastfood_24" />
+        app:srcCompat="@drawable/baseline_image_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

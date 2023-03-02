@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 
 class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Restaurant>) :
     RecyclerView.Adapter<RecyclerAdapterRestaurante.viewHolder>() {
@@ -31,6 +33,18 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
         holder.nameTextView.text = restaurante.restaurantName
         holder.listItemPosition = position
         holder.restaurantFavoriteCheckBox.isChecked
+
+        Picasso.get().load(restaurante.restaurantImage).into(holder.imageOnRestaurant)
+
+        holder.favoriteCheckBox.setOnCheckedChangeListener { checkBox , isChecked ->
+             if (isChecked) {
+                 Toast.makeText(context, "Added to favorite", Toast.LENGTH_LONG).show()
+             } else {
+                 Toast.makeText(context, "Removed from favorite", Toast.LENGTH_LONG).show()
+             }
+        }
+
+
     }
 
     override fun getItemCount(): Int {
@@ -46,6 +60,14 @@ class RecyclerAdapterRestaurante(val context: Context, val restaurants: List<Res
         init {
             itemView.setOnClickListener {
                 val intent = Intent(context, DishesMenuRecyclerView::class.java)
+        val favoriteCheckBox = itemView.findViewById<CheckBox>(R.id.cb_Favorite)
+        val imageOnRestaurant = itemView.findViewById<ImageView>(R.id.privRestaurantImage)
+        var listItemPosition = 0
+
+        init {
+            itemView.setOnClickListener{
+                val intent = Intent (context, UserChoice::class.java)
+
                 intent.putExtra("Key", listItemPosition)
                 context.startActivity(intent)
             }
