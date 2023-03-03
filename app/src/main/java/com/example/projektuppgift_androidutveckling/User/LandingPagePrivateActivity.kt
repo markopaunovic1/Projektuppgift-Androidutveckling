@@ -67,10 +67,7 @@ class LandingPagePrivateActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-                R.id.nav_orders -> {
 
-                    true
-                }
                 R.id.nav_favorite -> {
                     val intent = Intent(this, UserFavoriteList::class.java)
                     startActivity(intent)
@@ -88,10 +85,6 @@ class LandingPagePrivateActivity : AppCompatActivity() {
 
                     val intent = Intent(this, SettingsActivity::class.java)
                     startActivity(intent)
-
-                    true
-                }
-                R.id.nav_share -> {
 
                     true
                 }

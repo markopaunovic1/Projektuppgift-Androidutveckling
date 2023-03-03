@@ -7,10 +7,8 @@
 
     <ImageView
         android:id="@+id/dishIV"
-        android:layout_width="124dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,45 +16,66 @@
 
     <TextView
         android:id="@+id/ingredientsTV"
-        android:layout_width="181dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="194dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/open_sans"
         android:text="tomat, cheeese and meet"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dishIV" />
 
     <TextView
         android:id="@+id/priceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginTop="8dp"
-        android:text="Price : 119"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toEndOf="@+id/dishIV"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientsTV" />
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:text="Kebab Pizza "
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toTopOf="@+id/ingredientsTV"
-        app:layout_constraintStart_toEndOf="@+id/dishIV" />
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/dishIV"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/AddDishButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_add_circle_outline_24" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        android:text="kr"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
