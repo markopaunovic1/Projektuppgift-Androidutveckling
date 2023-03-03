@@ -8,22 +8,23 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/DishesMenuRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="407dp"
+        android:layout_height="731dp"
         android:layout_marginTop="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/dishitem" />
 
     <ImageButton
         android:id="@+id/CartButton"
         android:layout_width="51dp"
         android:layout_height="46dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
         android:background="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
