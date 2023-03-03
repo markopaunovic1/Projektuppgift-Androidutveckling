@@ -56,7 +56,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/bebas_neue"
-        android:text="Välkommen till Mealmove!  Mealmove är en professionell matbeställningsapp.Här kommer vi bara att ge dig intressant innehåll, som du kommer att gilla väldigt mycket.Vi är dedikerade till att ge dig det bästa av matupplevelsen, med fokus på pålitlighet och beställa mat.Vi arbetar på att förvandla vår passion för mat till en blomstrande matapp.Vi hoppas att du gillar vår matapp lika mycket som vi tycker om att erbjuda dem till dig.Jag kommer att fortsätta lägga upp fler viktiga inlägg på min webbplats för er alla.Vänligen ge ditt stöd och kärlek.  Tack för att du besöker vår webbplats"
+        android:text="Välkommen till Mealmove!  Mealmove är en professionell matbeställningsapp.Här kommer vi bara att ge dig intressant innehåll, som du kommer att gilla väldigt mycket.Vi är dedikerade till att ge dig det bästa av matupplevelsen, med fokus på pålitlighet och beställa mat.Vi arbetar på att förvandla vår passion för mat till en blomstrande matapp.Vi hoppas att du gillar vår matapp lika mycket som vi tycker om att erbjuda dem till dig."
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
